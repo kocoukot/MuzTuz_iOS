@@ -13,11 +13,20 @@ class CommonFuncs{
         
     func shadowSet(_ button: UIButton){
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        button.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        button.layer.shadowOffset = CGSize(width: 2.5, height: 2.5)
         button.layer.shadowOpacity = 1.0
         button.layer.shadowRadius = 0.0
         button.layer.masksToBounds = false
         button.layer.cornerRadius = 4.0
+    }
+    
+    func shadowRemove(_ button: UIButton){
+    button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+    button.layer.shadowOffset = CGSize(width: 2.5, height: 2.5)
+    button.layer.shadowOpacity = 1.0
+    button.layer.shadowRadius = 0.0
+    button.layer.masksToBounds = false
+    button.layer.cornerRadius = 4.0
     }
     
     func cornersSet(_ button: UIButton){

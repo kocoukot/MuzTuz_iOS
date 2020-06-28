@@ -16,6 +16,12 @@ class ViewController: UIViewController, MessageViewDelegate {
     
     
     
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var statisticButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var creatirsButton: UIButton!
+    @IBOutlet weak var shopButton: UIButton!
+    
     @IBOutlet weak var topBarView: UIView!
     @IBOutlet weak var blur: UIVisualEffectView!
     
@@ -23,6 +29,12 @@ class ViewController: UIViewController, MessageViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let buttonsList = [playButton, statisticButton,resetButton,creatirsButton,shopButton  ]
+        for b in buttonsList{
+            CommonFuncs().shadowSet(b!)
+        }
+        
         topBarVC.delegate = self
         messageView.delegate = self
         topBarVC.backButtonOutlet.isHidden = true
@@ -48,6 +60,7 @@ class ViewController: UIViewController, MessageViewDelegate {
         
     }
     
+    
     @IBAction func playButtonClick(_ sender: Any) {
         SoundsPlay.shared.playSound("swipe2", "wav")
         
@@ -62,16 +75,23 @@ class ViewController: UIViewController, MessageViewDelegate {
         
     }
     
-    
     @IBAction func resetButton(_ sender: Any) {
         SoundsPlay.shared.playSound("common", "wav")
         MessageView().showMessage(blur, "Вы уверены, что хотите удалить все свои достиженя?", view,okButton: false, messageView )
-        
     }
     
     @IBAction func authorsButton(_ sender: Any) {
         SoundsPlay.shared.playSound("common", "wav")
-        
+    }
+    
+    
+    @IBAction func removeShadow(_ sender: Any) {
+        (sender as AnyObject).layer.shadowOffset = CGSize(width: 0, height: 0)
+    }
+    
+    
+    @IBAction func returnShadow(_ sender: Any) {
+        (sender as AnyObject).layer.shadowOffset = CGSize(width: 2.5, height: 2.5)
     }
     
     func qestionAnswered(_ useHelp: Bool) {
@@ -107,7 +127,20 @@ class ViewController: UIViewController, MessageViewDelegate {
         SoundsPlay.shared.playSound("common", "wav")
         CommonFuncs().openURL("https://www.instagram.com/alexzhegulov/")
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
+
+
 
 extension ViewController: PremiaSelectVCDelegate, ShopDelegate{
     func topBarIconsUpdate() {

@@ -129,9 +129,7 @@
 		3A75E2512496B72A00CDB10D /* LettersHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersHelpView.swift; sourceTree = "<group>"; };
 		3A75E25424978D6F00CDB10D /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
 		3AD4688124A8AA69006A82CF /* boughtCoins.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boughtCoins.wav; sourceTree = "<group>"; };
-		3AD4688424A8B03E006A82CF /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AD4688624A8B0E0006A82CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3AD4688724A8B0FC006A82CF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		3AD4688824A8B102006A82CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FF9A1C51A8635B465A08F9A /* Pods-MuzTuzz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuzTuzz.debug.xcconfig"; path = "Target Support Files/Pods-MuzTuzz/Pods-MuzTuzz.debug.xcconfig"; sourceTree = "<group>"; };
 		8E5A8596BA6EEBAE340C83AF /* Pods_MuzTuzz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuzTuzz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -445,7 +443,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				ru,
 				Base,
 			);
 			mainGroup = 3A7079AE2494C01A00403419;
@@ -615,7 +612,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				3AD4688624A8B0E0006A82CF /* Base */,
-				3AD4688724A8B0FC006A82CF /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -623,7 +619,6 @@
 		3A7079C52494C01D00403419 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3AD4688424A8B03E006A82CF /* ru */,
 				3AD4688824A8B102006A82CF /* Base */,
 			);
 			name = LaunchScreen.storyboard;

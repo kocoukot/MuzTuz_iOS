@@ -24,9 +24,9 @@ class FreeCoinsRewardClass: NSObject, GADRewardedAdDelegate, GADInterstitialDele
     var interstitial: GADInterstitial!
     
     func adLoad(){
-        rewardedAd = GADRewardedAd(adUnitID: testAdID)
+//        rewardedAd = GADRewardedAd(adUnitID: testAdID)
 
-//        rewardedAd = GADRewardedAd(adUnitID: adID)
+        rewardedAd = GADRewardedAd(adUnitID: adID)
         
         rewardedAd?.load(GADRequest()) { error in
             if let error = error {
@@ -68,8 +68,8 @@ class FreeCoinsRewardClass: NSObject, GADRewardedAdDelegate, GADInterstitialDele
     
     
     func interstitialAdLoad(){
-//        interstitial = GADInterstitial(adUnitID: interstitialAd)
-         interstitial = GADInterstitial(adUnitID: testInterstitialAd)
+        interstitial = GADInterstitial(adUnitID: interstitialAd)
+//         interstitial = GADInterstitial(adUnitID: testInterstitialAd)
         let request = GADRequest()
         interstitial.load(request)
         print ("ad loaded")

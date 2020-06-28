@@ -69,7 +69,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="89w-Ba-vUy">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="89w-Ba-vUy">
                                 <rect key="frame" x="50" y="154" width="314" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="p35-Nw-3HJ"/>
@@ -83,6 +83,10 @@
                                 </state>
                                 <connections>
                                     <action selector="playButtonClick:" destination="UhW-SL-9hJ" eventType="touchUpInside" id="avF-hM-s31"/>
+                                    <action selector="removeShadow:" destination="UhW-SL-9hJ" eventType="touchDown" id="3mR-Wm-zC5"/>
+                                    <action selector="returnShadow:" destination="UhW-SL-9hJ" eventType="touchDragOutside" id="Kyn-wv-xbR"/>
+                                    <action selector="returnShadow:" destination="UhW-SL-9hJ" eventType="touchUpInside" id="pu4-m8-eYN"/>
+                                    <action selector="returnShadow:" destination="UhW-SL-9hJ" eventType="touchCancel" id="xJ4-wp-88q"/>
                                     <segue destination="MWz-ja-C2S" kind="show" identifier="premiaList" id="8K8-3p-Xb0"/>
                                 </connections>
                             </button>
@@ -100,6 +104,10 @@
                                         <state key="selected" image="statistika_tap"/>
                                         <state key="highlighted" image="statistika_tap"/>
                                         <connections>
+                                            <action selector="removeShadow:" destination="UhW-SL-9hJ" eventType="touchDown" id="vqX-Zg-cNA"/>
+                                            <action selector="returnShadow:" destination="UhW-SL-9hJ" eventType="touchCancel" id="Bsl-Sm-n2m"/>
+                                            <action selector="returnShadow:" destination="UhW-SL-9hJ" eventType="touchUpInside" id="IL0-YU-egW"/>
+                                            <action selector="returnShadow:" destination="UhW-SL-9hJ" eventType="touchDragOutside" id="y6B-Zu-McG"/>
                                             <action selector="statisticButton:" destination="UhW-SL-9hJ" eventType="touchUpInside" id="cpV-vB-Wf5"/>
                                             <segue destination="4XC-IM-WzD" kind="show" id="nPj-X9-G26"/>
                                         </connections>
@@ -112,6 +120,10 @@
                                         <state key="selected" image="magazin_tap"/>
                                         <state key="highlighted" image="magazin_tap"/>
                                         <connections>
+                                            <action selector="removeShadow:" destination="UhW-SL-9hJ" eventType="touchDown" id="ZQt-RH-mpQ"/>
+                                            <action selector="returnShadow:" destination="UhW-SL-9hJ" eventType="touchUpInside" id="0Vf-h5-4Qo"/>
+                                            <action selector="returnShadow:" destination="UhW-SL-9hJ" eventType="touchDragOutside" id="DUb-iW-6qp"/>
+                                            <action selector="returnShadow:" destination="UhW-SL-9hJ" eventType="touchCancel" id="Vuy-78-ObV"/>
                                             <action selector="shopButton:" destination="UhW-SL-9hJ" eventType="touchUpInside" id="dIt-II-9R6"/>
                                             <segue destination="ILx-tX-wVN" kind="show" identifier="shopSegueID" id="oDG-mk-7aj"/>
                                         </connections>
@@ -124,7 +136,11 @@
                                         <state key="selected" image="sbros_tap"/>
                                         <state key="highlighted" image="sbros_tap"/>
                                         <connections>
+                                            <action selector="removeShadow:" destination="UhW-SL-9hJ" eventType="touchDown" id="jWG-5s-yHu"/>
                                             <action selector="resetButton:" destination="UhW-SL-9hJ" eventType="touchUpInside" id="yCM-Lk-stC"/>
+                                            <action selector="returnShadow:" destination="UhW-SL-9hJ" eventType="touchCancel" id="J1q-3M-6fE"/>
+                                            <action selector="returnShadow:" destination="UhW-SL-9hJ" eventType="touchDragOutside" id="LKK-Na-wGN"/>
+                                            <action selector="returnShadow:" destination="UhW-SL-9hJ" eventType="touchUpInside" id="gpU-Da-qW9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8m-ZL-2fX">
@@ -136,6 +152,10 @@
                                         <state key="highlighted" image="cozdateli_tap"/>
                                         <connections>
                                             <action selector="authorsButton:" destination="UhW-SL-9hJ" eventType="touchUpInside" id="X4C-Rv-IDC"/>
+                                            <action selector="removeShadow:" destination="UhW-SL-9hJ" eventType="touchDown" id="qr8-yj-NkU"/>
+                                            <action selector="returnShadow:" destination="UhW-SL-9hJ" eventType="touchCancel" id="CFk-MM-GhN"/>
+                                            <action selector="returnShadow:" destination="UhW-SL-9hJ" eventType="touchDragOutside" id="MY4-y4-5dv"/>
+                                            <action selector="returnShadow:" destination="UhW-SL-9hJ" eventType="touchUpInside" id="XdS-M0-FYP"/>
                                             <segue destination="BqX-P1-9cr" kind="show" identifier="" id="WCL-yN-xtQ"/>
                                         </connections>
                                     </button>
@@ -237,6 +257,11 @@
                     <navigationItem key="navigationItem" id="PyO-4r-tGk"/>
                     <connections>
                         <outlet property="blur" destination="kDv-Eh-ECf" id="7I8-Gx-zvl"/>
+                        <outlet property="creatirsButton" destination="j8m-ZL-2fX" id="OEW-eG-BSy"/>
+                        <outlet property="playButton" destination="89w-Ba-vUy" id="hxh-Zi-Njz"/>
+                        <outlet property="resetButton" destination="fBC-gA-h4g" id="3DO-W0-J8B"/>
+                        <outlet property="shopButton" destination="Ult-4b-VRg" id="W0x-CQ-8OX"/>
+                        <outlet property="statisticButton" destination="WRo-OO-HmH" id="sdg-Rk-lAZ"/>
                         <outlet property="topBarView" destination="5Y2-iQ-6eZ" id="PJi-hT-WvR"/>
                     </connections>
                 </viewController>
@@ -359,24 +384,28 @@
                                 <color key="textColor" red="0.99923306700000003" green="0.98608428240000001" blue="0.87057226899999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="ALk-6W-id7">
-                                <rect key="frame" x="20" y="165" width="374" height="512"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ALk-6W-id7">
+                                <rect key="frame" x="20" y="146" width="374" height="550"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHD-Wd-NR4">
-                                        <rect key="frame" x="67" y="0.0" width="240" height="60"/>
+                                        <rect key="frame" x="54" y="0.0" width="266" height="70"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="eQo-zd-5eL"/>
-                                            <constraint firstAttribute="width" secondItem="GHD-Wd-NR4" secondAttribute="height" multiplier="4:1" id="fez-xH-34Y"/>
+                                            <constraint firstAttribute="height" constant="70" id="eQo-zd-5eL"/>
+                                            <constraint firstAttribute="width" secondItem="GHD-Wd-NR4" secondAttribute="height" multiplier="3.8:1" id="fez-xH-34Y"/>
                                         </constraints>
                                         <state key="normal" image="magazin_2999m"/>
                                         <state key="selected" image="magazin_2999m_tap"/>
                                         <state key="highlighted" image="magazin_2999m_tap"/>
                                         <connections>
                                             <action selector="firstBuyCoin:" destination="ILx-tX-wVN" eventType="touchUpInside" id="4BM-bG-P8P"/>
+                                            <action selector="removeShadow:" destination="ILx-tX-wVN" eventType="touchDown" id="ddJ-SR-bns"/>
+                                            <action selector="returnShadow:" destination="ILx-tX-wVN" eventType="touchDragOutside" id="FD9-Vt-nij"/>
+                                            <action selector="returnShadow:" destination="ILx-tX-wVN" eventType="touchUpInside" id="WAG-ea-BUN"/>
+                                            <action selector="returnShadow:" destination="ILx-tX-wVN" eventType="touchCancel" id="euk-ee-y1A"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uy7-Iq-9Eo">
-                                        <rect key="frame" x="67" y="113" width="240" height="60"/>
+                                        <rect key="frame" x="47" y="120" width="280" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Uy7-Iq-9Eo" secondAttribute="height" multiplier="4:1" id="6VD-mU-rAp"/>
                                         </constraints>
@@ -384,11 +413,15 @@
                                         <state key="selected" image="magazin_5999m_tap"/>
                                         <state key="highlighted" image="magazin_5999m_tap"/>
                                         <connections>
+                                            <action selector="removeShadow:" destination="ILx-tX-wVN" eventType="touchDown" id="tvd-je-zv2"/>
+                                            <action selector="returnShadow:" destination="ILx-tX-wVN" eventType="touchCancel" id="8yj-n4-Q5O"/>
+                                            <action selector="returnShadow:" destination="ILx-tX-wVN" eventType="touchUpInside" id="VZj-YB-4Sh"/>
+                                            <action selector="returnShadow:" destination="ILx-tX-wVN" eventType="touchDragOutside" id="xAU-T6-DnE"/>
                                             <action selector="secondBuyCoin:" destination="ILx-tX-wVN" eventType="touchUpInside" id="QiM-5S-fRq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nx9-tr-qUh">
-                                        <rect key="frame" x="67" y="226" width="240" height="60"/>
+                                        <rect key="frame" x="47" y="240" width="280" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="nx9-tr-qUh" secondAttribute="height" multiplier="4:1" id="Asw-2b-kTm"/>
                                         </constraints>
@@ -396,28 +429,40 @@
                                         <state key="selected" image="magazin_12999m_tap"/>
                                         <state key="highlighted" image="magazin_12999m_tap"/>
                                         <connections>
+                                            <action selector="removeShadow:" destination="ILx-tX-wVN" eventType="touchDown" id="oCx-bd-tMb"/>
+                                            <action selector="returnShadow:" destination="ILx-tX-wVN" eventType="touchDragOutside" id="Dwm-0U-b5V"/>
+                                            <action selector="returnShadow:" destination="ILx-tX-wVN" eventType="touchCancel" id="UDm-iR-HEB"/>
+                                            <action selector="returnShadow:" destination="ILx-tX-wVN" eventType="touchUpInside" id="zLH-OR-QR8"/>
                                             <action selector="thirdBuyCoin:" destination="ILx-tX-wVN" eventType="touchUpInside" id="adp-cb-Ieb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDN-fA-KNE">
-                                        <rect key="frame" x="67" y="339" width="240" height="60"/>
-                                        <state key="normal" image="magazin_999999m+"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDN-fA-KNE">
+                                        <rect key="frame" x="47" y="360" width="280" height="70"/>
+                                        <state key="normal" image="magazin_999999m"/>
                                         <state key="selected" image="magazin_999999m_tap"/>
                                         <state key="highlighted" image="magazin_999999m_tap"/>
                                         <connections>
                                             <action selector="fourthBuyCoin:" destination="ILx-tX-wVN" eventType="touchUpInside" id="c2X-JH-W8r"/>
+                                            <action selector="removeShadow:" destination="ILx-tX-wVN" eventType="touchDown" id="S2v-Ob-aqO"/>
+                                            <action selector="returnShadow:" destination="ILx-tX-wVN" eventType="touchDragOutside" id="DUl-YE-9Nb"/>
+                                            <action selector="returnShadow:" destination="ILx-tX-wVN" eventType="touchUpInside" id="YhB-ZS-y5h"/>
+                                            <action selector="returnShadow:" destination="ILx-tX-wVN" eventType="touchCancel" id="hj8-xD-s3Q"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kc-uh-bze">
-                                        <rect key="frame" x="43" y="452" width="288" height="60"/>
+                                        <rect key="frame" x="29.666666666666657" y="480" width="315" height="70"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="8kc-uh-bze" secondAttribute="height" multiplier="4.8:1" id="hgY-JB-9Dl"/>
+                                            <constraint firstAttribute="width" secondItem="8kc-uh-bze" secondAttribute="height" multiplier="4.5:1" id="hgY-JB-9Dl"/>
                                         </constraints>
                                         <state key="normal" image="bm_animaciya"/>
                                         <state key="selected" image="bm_tap_animaciya"/>
                                         <state key="highlighted" image="bm_tap_animaciya"/>
                                         <connections>
                                             <action selector="freeCoins:" destination="ILx-tX-wVN" eventType="touchUpInside" id="m4z-EW-j40"/>
+                                            <action selector="removeShadow:" destination="ILx-tX-wVN" eventType="touchDown" id="67c-tM-fq4"/>
+                                            <action selector="returnShadow:" destination="ILx-tX-wVN" eventType="touchUpInside" id="HSf-HT-Npi"/>
+                                            <action selector="returnShadow:" destination="ILx-tX-wVN" eventType="touchCancel" id="sqV-pa-iFX"/>
+                                            <action selector="returnShadow:" destination="ILx-tX-wVN" eventType="touchDragOutside" id="w8T-ZV-GqH"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -426,7 +471,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bm_ogonki_1_animaciya" translatesAutoresizingMaskIntoConstraints="NO" id="gy0-dN-mG1">
-                                <rect key="frame" x="61" y="602" width="288" height="40"/>
+                                <rect key="frame" x="47.666666666666657" y="611" width="315" height="40"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.36537444590000001" green="0.55835592749999996" blue="0.45096778869999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1153,26 +1198,26 @@
         <image name="bm_tap_animaciya" width="1004" height="263"/>
         <image name="ccRights" width="202" height="202"/>
         <image name="chelovechek_ochen_rady" width="1024" height="406"/>
-        <image name="cozdateli" width="849" height="152"/>
-        <image name="cozdateli_tap" width="849" height="152"/>
+        <image name="cozdateli" width="837" height="140"/>
+        <image name="cozdateli_tap" width="837" height="140"/>
         <image name="fb" width="174" height="176"/>
         <image name="fb_tap" width="174" height="175"/>
         <image name="fire" width="693" height="380"/>
-        <image name="igra" width="1003" height="201"/>
-        <image name="igra_tap" width="1003" height="202"/>
+        <image name="igra" width="987" height="186"/>
+        <image name="igra_tap" width="987" height="186"/>
         <image name="instagram" width="174" height="176"/>
         <image name="instagram_tap" width="175" height="176"/>
         <image name="lvl10" width="289" height="290"/>
-        <image name="magazin" width="850" height="152"/>
-        <image name="magazin_12999m" width="905" height="199"/>
-        <image name="magazin_12999m_tap" width="905" height="199"/>
-        <image name="magazin_2999m" width="905" height="198"/>
-        <image name="magazin_2999m_tap" width="906" height="198"/>
-        <image name="magazin_5999m" width="906" height="199"/>
-        <image name="magazin_5999m_tap" width="905" height="199"/>
-        <image name="magazin_999999m+" width="910" height="257"/>
-        <image name="magazin_999999m_tap" width="911" height="257"/>
-        <image name="magazin_tap" width="849" height="153"/>
+        <image name="magazin" width="837" height="140"/>
+        <image name="magazin_12999m" width="888" height="240"/>
+        <image name="magazin_12999m_tap" width="888" height="240"/>
+        <image name="magazin_2999m" width="888" height="240"/>
+        <image name="magazin_2999m_tap" width="888" height="240"/>
+        <image name="magazin_5999m" width="888" height="240"/>
+        <image name="magazin_5999m_tap" width="888" height="240"/>
+        <image name="magazin_999999m" width="888" height="240"/>
+        <image name="magazin_999999m_tap" width="888" height="240"/>
+        <image name="magazin_tap" width="837" height="140"/>
         <image name="muztus" width="1140" height="479"/>
         <image name="obychenie_0" width="557" height="559"/>
         <image name="podskazka_albom_pesny" width="167" height="169"/>
@@ -1181,11 +1226,11 @@
         <image name="podskazka_kolichestvo_bukv_zakrita" width="170" height="173"/>
         <image name="podskazka_lubay_bukva" width="170" height="172"/>
         <image name="podskazka_lubay_bukva_zakrita" width="170" height="173"/>
-        <image name="sbros" width="849" height="152"/>
-        <image name="sbros_tap" width="850" height="152"/>
+        <image name="sbros" width="837" height="140"/>
+        <image name="sbros_tap" width="837" height="140"/>
         <image name="solved" width="146" height="117"/>
-        <image name="statistika" width="850" height="152"/>
-        <image name="statistika_tap" width="850" height="152"/>
+        <image name="statistika" width="837" height="140"/>
+        <image name="statistika_tap" width="837" height="140"/>
         <image name="strelka1_1_animaciya" width="210" height="285"/>
         <image name="strelka2_1_animaciya" width="211" height="285"/>
         <image name="tvitter" width="174" height="176"/>

@@ -36,36 +36,34 @@ class MessageView: UIView {
         super.layoutSubviews()
         CommonFuncs().shadowSet(yesButton)
         CommonFuncs().shadowSet(noButton)
-
-        yesButton.layer.cornerRadius = 10
-        noButton.layer.cornerRadius = 10
+        CommonFuncs().shadowSet(okButton)
         self.layer.cornerRadius = 15
-        
-        
         self.frame = CGRect(x: viewX  , y: viewY, width: viewWidth , height: viewHeight)
     }
-    
-    
-    
-    
+
     @IBAction func yesAnswer(_ sender: Any) {
         delegate?.qestionAnswered(true)
-        
-
     }
 
-    
     @IBAction func okAnswer(_ sender: Any) {
         SoundsPlay.shared.playSound("common", "wav")        // click sound
         delegate?.qestionAnswered(false)
-
     }
     
     @IBAction func noAnswer(_ sender: Any) {
         SoundsPlay.shared.playSound("common", "wav")        // click sound
         delegate?.qestionAnswered(false)
-
     }
+    
+    
+    @IBAction func removeShadow(_ sender: Any) {
+         (sender as AnyObject).layer.shadowOffset = CGSize(width: 0, height: 0)
+     }
+     
+     
+     @IBAction func returnShadow(_ sender: Any) {
+         (sender as AnyObject).layer.shadowOffset = CGSize(width: 2.5, height: 2.5)
+     }
     
     func showMessage(_ blur:UIVisualEffectView? = nil,_ text: String,_ view: UIView,okButton: Bool,_ messageView: MessageView){
         

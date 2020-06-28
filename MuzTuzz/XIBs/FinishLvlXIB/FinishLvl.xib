@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FinishLvlView" customModule="MuzTuzz" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FinishLvlView" customModule="МузТус" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -30,6 +30,10 @@
                     <state key="highlighted" image="ok_tap"/>
                     <connections>
                         <action selector="okButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="2c4-eh-tSU"/>
+                        <action selector="removeShadow:" destination="iN0-l3-epB" eventType="touchDown" id="S1Y-fe-wPw"/>
+                        <action selector="returnShadow:" destination="iN0-l3-epB" eventType="touchCancel" id="HCc-Fx-Th3"/>
+                        <action selector="returnShadow:" destination="iN0-l3-epB" eventType="touchUpInside" id="YYh-g8-oEM"/>
+                        <action selector="returnShadow:" destination="iN0-l3-epB" eventType="touchDragOutside" id="pR9-G3-UQ4"/>
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NPE-Ra-ubD">
@@ -143,7 +147,7 @@
     </objects>
     <resources>
         <image name="moneta" width="79" height="81"/>
-        <image name="ok" width="241" height="135"/>
+        <image name="ok" width="228" height="122"/>
         <image name="ok_tap" width="228" height="122"/>
         <image name="zvezda_ochki" width="91" height="81"/>
         <image name="zvezda_zakrita1_prizovogo_okna" width="200" height="200"/>

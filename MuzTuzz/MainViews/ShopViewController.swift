@@ -28,6 +28,10 @@ class ShopViewController: UIViewController  {
     let ogonkiList = ["bm_ogonki_1_animaciya", "bm_ogonki_2_animaciya", "bm_ogonki_3_animaciya", "bm_ogonki_4_animaciya"]
     
     override func viewDidLoad() {
+        let buttonsList = [firstBuyButton,secondBuyButton,thirdBuyButton,fourthBuyButton,freeBuyButton ]
+        for b in buttonsList {
+            CommonFuncs().shadowSet(b!)
+        }
         super.viewDidLoad()
         var i = 0
         _  = Timer.scheduledTimer(withTimeInterval: 0.15, repeats: true) { (t) in
@@ -81,7 +85,7 @@ class ShopViewController: UIViewController  {
     }
     
     func showSingleAlert(withMessage message: String) {
-        let alertController = UIAlertController(title: "FakeGame", message: message, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "МузТус", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
@@ -103,6 +107,15 @@ class ShopViewController: UIViewController  {
     }
     
     
+    @IBAction func removeShadow(_ sender: Any) {
+        (sender as AnyObject).layer.shadowOffset = CGSize(width: 0, height: 0)
+    }
+    
+    
+    @IBAction func returnShadow(_ sender: Any) {
+        (sender as AnyObject).layer.shadowOffset = CGSize(width: 2.5, height: 2.5)
+    }
+    
     func showAlert(index: Int) {
         guard let product = getProductForItem(at: index) else {
             showSingleAlert(withMessage: "К сожалению вы не можете приобрести данный товар в текущий момент.")
@@ -116,7 +129,7 @@ class ShopViewController: UIViewController  {
         alertController.addAction(UIAlertAction(title: "Купить за \(price)", style: .default, handler: { (_) in
             
             if !IAPHelper.canMakePayments(){
-                self.showSingleAlert(withMessage: "In-App Purchases are not allowed in this device.")
+                self.showSingleAlert(withMessage: "К сожалению вы не можете приобрести данный товар на данном устройстве.")
             } else {
                 MuzTusProducts.store.buyProduct(product)
                 self.updateGameDataWithPurchasedProduct(product)

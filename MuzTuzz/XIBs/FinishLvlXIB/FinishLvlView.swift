@@ -40,7 +40,7 @@ class FinishLvlView: UIView {
         
         super.layoutSubviews()
         self.layer.cornerRadius = 10
-        CommonFuncs().cornersSet(okButton)
+        CommonFuncs().shadowSet(okButton)
         let animDuration = 0.4
         self.frame = CGRect(x: UIScreen.main.bounds.width / 2 - frameWidth/2  , y: UIScreen.main.bounds.height / 2 - frameHeight / 2, width: frameWidth , height: frameHeight )
         self.layoutIfNeeded()
@@ -97,6 +97,17 @@ class FinishLvlView: UIView {
         SoundsPlay.shared.playSound("common", "wav")
         
         delegate?.okCkicked()
+    }
+    
+    
+    
+    @IBAction func removeShadow(_ sender: Any) {
+        (sender as AnyObject).layer.shadowOffset = CGSize(width: 0, height: 0)
+    }
+    
+    
+    @IBAction func returnShadow(_ sender: Any) {
+        (sender as AnyObject).layer.shadowOffset = CGSize(width: 2.5, height: 2.5)
     }
     
     static func loadFromNIB() -> FinishLvlView{
