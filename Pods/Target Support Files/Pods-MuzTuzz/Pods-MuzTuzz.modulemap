@@ -1,0 +1,6 @@
+framework module Pods_MuzTuzz {
+  umbrella header "Pods-MuzTuzz-umbrella.h"
+
+  export *
+  module * { export * }
+}

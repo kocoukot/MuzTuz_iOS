@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LettersHelpView" customModule="MuzTuzz" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAo-aG-1VJ">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="70"/>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите букву!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="un2-uP-xbc">
+                    <rect key="frame" x="58" y="44" width="134" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.94804733990000001" green="0.89192187789999999" blue="0.78037571910000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="YAo-aG-1VJ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0w5-T0-Zy1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="YAo-aG-1VJ" secondAttribute="trailing" id="2EI-gB-wSC"/>
+                <constraint firstItem="YAo-aG-1VJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6dB-tb-7xp"/>
+                <constraint firstItem="un2-uP-xbc" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-5" id="Xk4-Y4-He1"/>
+                <constraint firstItem="un2-uP-xbc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Y5G-gi-GYU"/>
+                <constraint firstAttribute="bottom" secondItem="YAo-aG-1VJ" secondAttribute="bottom" id="bYo-Px-1AZ"/>
+                <constraint firstItem="YAo-aG-1VJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="eQ2-dK-BwS"/>
+                <constraint firstItem="YAo-aG-1VJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mSX-gH-csr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="stackView" destination="YAo-aG-1VJ" id="5I7-w8-GrX"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="108.84557721139431"/>
+        </view>
+    </objects>
+</document>

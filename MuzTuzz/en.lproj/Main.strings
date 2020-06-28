@@ -1,0 +1,72 @@
+
+/* Class = "UILabel"; text = "Тексты и подбор номинантов:\n   Струк Игорь "; ObjectID = "0ZS-YC-TET"; */
+"0ZS-YC-TET.text" = "Тексты и подбор номинантов:\n   Струк Игорь ";
+
+/* Class = "UILabel"; text = "Attributions"; ObjectID = "1M8-GY-1zY"; */
+"1M8-GY-1zY.text" = "Attributions";
+
+/* Class = "UILabel"; text = "МАГАЗИНЧИК"; ObjectID = "9HH-Kz-Tos"; */
+"9HH-Kz-Tos.text" = "МАГАЗИНЧИК";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "EAz-Ns-MRW"; */
+"EAz-Ns-MRW.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Версия игры:"; ObjectID = "EGe-BC-7OF"; */
+"EGe-BC-7OF.text" = "Версия игры:";
+
+/* Class = "UILabel"; text = "Альбом: \nПесня: "; ObjectID = "Hno-fp-IaS"; */
+"Hno-fp-IaS.text" = "Альбом: \nПесня: ";
+
+/* Class = "UILabel"; text = "Программная часть:     Кудрявцев Антон aka Kocou Kot"; ObjectID = "IsK-56-XvY"; */
+"IsK-56-XvY.text" = "Программная часть:     Кудрявцев Антон aka Kocou Kot";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "N7z-qD-tTj"; */
+"N7z-qD-tTj.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Самый быстрый ответ:"; ObjectID = "OnB-6G-o6y"; */
+"OnB-6G-o6y.text" = "Самый быстрый ответ:";
+
+/* Class = "UILabel"; text = " "; ObjectID = "Q62-Cu-vin"; */
+"Q62-Cu-vin.text" = " ";
+
+/* Class = "UILabel"; text = "Особая благодарность всем, кто помогал и тестировал! ❤️"; ObjectID = "SqW-on-Vny"; */
+"SqW-on-Vny.text" = "Особая благодарность всем, кто помогал и тестировал! ❤️";
+
+/* Class = "UILabel"; text = "Самый долгий ответ:"; ObjectID = "TA0-Uw-3TX"; */
+"TA0-Uw-3TX.text" = "Самый долгий ответ:";
+
+/* Class = "UILabel"; text = "Помощь с идеями и текстами:\n  Кудрявцева Екатерина"; ObjectID = "Uiq-u9-vkA"; */
+"Uiq-u9-vkA.text" = "Помощь с идеями и текстами:\n  Кудрявцева Екатерина";
+
+/* Class = "UILabel"; text = "Использовано подсказок:"; ObjectID = "VfK-3W-3yv"; */
+"VfK-3W-3yv.text" = "Использовано подсказок:";
+
+/* Class = "UILabel"; text = "Альбом: \nПесня: "; ObjectID = "YJc-M8-dIE"; */
+"YJc-M8-dIE.text" = "Альбом: \nПесня: ";
+
+/* Class = "UILabel"; text = " "; ObjectID = "aoE-I2-oo7"; */
+"aoE-I2-oo7.text" = " ";
+
+/* Class = "UILabel"; text = "РеДоктор:     Елена aka Merle"; ObjectID = "c3p-ck-IfR"; */
+"c3p-ck-IfR.text" = "РеДоктор:     Елена aka Merle";
+
+/* Class = "UILabel"; text = "Художник:     Малинин Александр"; ObjectID = "fyc-sd-JNz"; */
+"fyc-sd-JNz.text" = "Художник:     Малинин Александр";
+
+/* Class = "UITextField"; placeholder = "Введите свой ответ..."; ObjectID = "g2X-rF-2bj"; */
+"g2X-rF-2bj.placeholder" = "Введите свой ответ...";
+
+/* Class = "UILabel"; text = "Общее время игры:"; ObjectID = "kVF-mq-7Lj"; */
+"kVF-mq-7Lj.text" = "Общее время игры:";
+
+/* Class = "UILabel"; text = "Идея:    Жегулов Александр"; ObjectID = "lIB-kA-nB0"; */
+"lIB-kA-nB0.text" = "Идея:    Жегулов Александр";
+
+/* Class = "UILabel"; text = "Уровней пройдено:"; ObjectID = "le5-kw-ze9"; */
+"le5-kw-ze9.text" = "Уровней пройдено:";
+
+/* Class = "UITextField"; placeholder = "Введите свой ответ..."; ObjectID = "swz-jG-aSt"; */
+"swz-jG-aSt.placeholder" = "Введите свой ответ...";
+
+/* Class = "UILabel"; text = "СТАТИСТИКА"; ObjectID = "tNY-0H-OG1"; */
+"tNY-0H-OG1.text" = "СТАТИСТИКА";

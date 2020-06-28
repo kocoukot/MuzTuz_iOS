@@ -1,0 +1,919 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21E98D9FCEA376FBF402C244 /* Pods_MuzTuzz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5A8596BA6EEBAE340C83AF /* Pods_MuzTuzz.framework */; };
+		3A2C79062498A3E700897843 /* LevelsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C79052498A3E700897843 /* LevelsInfo.swift */; };
+		3A2C791D249B6E9600897843 /* ResetAll.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A2C790B249B6E9600897843 /* ResetAll.wav */; };
+		3A2C791F249B6E9600897843 /* wrongAnswer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A2C790D249B6E9600897843 /* wrongAnswer.wav */; };
+		3A2C7921249B6E9600897843 /* OnMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A2C790F249B6E9600897843 /* OnMusic.wav */; };
+		3A2C7923249B6E9600897843 /* OffMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A2C7911249B6E9600897843 /* OffMusic.wav */; };
+		3A2C7925249B6E9600897843 /* common.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A2C7913249B6E9600897843 /* common.wav */; };
+		3A2C7926249B6E9600897843 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A2C7914249B6E9600897843 /* win.wav */; };
+		3A2C7927249B6E9600897843 /* WarningView.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A2C7915249B6E9600897843 /* WarningView.wav */; };
+		3A2C7928249B6E9600897843 /* OpenPremia.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A2C7916249B6E9600897843 /* OpenPremia.wav */; };
+		3A2C7930249B702A00897843 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C792F249B702A00897843 /* Audio.swift */; };
+		3A2C7932249D29EC00897843 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C7931249D29EC00897843 /* StartScreenViewController.swift */; };
+		3A2C7934249DE01500897843 /* swipe2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A2C7933249DE01400897843 /* swipe2.wav */; };
+		3A2C7936249DE4D300897843 /* spendMoney.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A2C7935249DE4D300897843 /* spendMoney.wav */; };
+		3A2C7938249DF1E000897843 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C7937249DF1E000897843 /* TutorialViewController.swift */; };
+		3A2C793A249E0B8B00897843 /* appearingView.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A2C7939249E0B8B00897843 /* appearingView.wav */; };
+		3A2C793C24A219BA00897843 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C793B24A219BA00897843 /* StatisticViewController.swift */; };
+		3A2C793E24A4633300897843 /* AuthorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C793D24A4633300897843 /* AuthorsViewController.swift */; };
+		3A2C794424A4829000897843 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2C794324A4829000897843 /* StoreKit.framework */; };
+		3A2C794724A48D6F00897843 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C794624A48D6F00897843 /* ShopViewController.swift */; };
+		3A2C794924A4C02000897843 /* MuzTusProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C794824A4C02000897843 /* MuzTusProducts.swift */; };
+		3A2C794C24A4C2BF00897843 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C794B24A4C2BF00897843 /* IAPHelper.swift */; };
+		3A6F643024A5D09C0075D3B6 /* GMAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F642F24A5D09C0075D3B6 /* GMAds.swift */; };
+		3A7079BB2494C01A00403419 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7079BA2494C01A00403419 /* AppDelegate.swift */; };
+		3A7079BD2494C01A00403419 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7079BC2494C01A00403419 /* SceneDelegate.swift */; };
+		3A7079BF2494C01A00403419 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7079BE2494C01A00403419 /* MainMenu.swift */; };
+		3A7079C22494C01A00403419 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7079C02494C01A00403419 /* Main.storyboard */; };
+		3A7079C42494C01D00403419 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A7079C32494C01D00403419 /* Assets.xcassets */; };
+		3A7079C72494C01D00403419 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7079C52494C01D00403419 /* LaunchScreen.storyboard */; };
+		3A7079D22494C01D00403419 /* MuzTuzzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7079D12494C01D00403419 /* MuzTuzzTests.swift */; };
+		3A7079DD2494C01D00403419 /* MuzTuzzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7079DC2494C01D00403419 /* MuzTuzzUITests.swift */; };
+		3A7079EB2494DB7D00403419 /* TopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7079EA2494DB7D00403419 /* TopBar.xib */; };
+		3A7079F02494FC8400403419 /* PremiaSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7079EF2494FC8400403419 /* PremiaSelectVC.swift */; };
+		3A7079F22495035A00403419 /* PremiaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7079F12495035A00403419 /* PremiaCell.swift */; };
+		3A7079F524950A0000403419 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7079F424950A0000403419 /* TopBar.swift */; };
+		3A7079F824950F8700403419 /* CommonFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7079F724950F8700403419 /* CommonFuncs.swift */; };
+		3A75E2352495157800CDB10D /* PremiaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A75E2342495157800CDB10D /* PremiaVC.swift */; };
+		3A75E237249515B800CDB10D /* PremiaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A75E236249515B800CDB10D /* PremiaCollectionViewCell.swift */; };
+		3A75E23B24952DF000CDB10D /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A75E23A24952DF000CDB10D /* LevelViewController.swift */; };
+		3A75E23D24965F0400CDB10D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A75E23C24965F0400CDB10D /* Persistence.swift */; };
+		3A75E23F24967D3C00CDB10D /* Helps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A75E23E24967D3C00CDB10D /* Helps.swift */; };
+		3A75E2412496835700CDB10D /* HelpQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A75E2402496835700CDB10D /* HelpQuestionView.xib */; };
+		3A75E2462496875900CDB10D /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A75E2452496875800CDB10D /* MessageView.swift */; };
+		3A75E24C2496B6BD00CDB10D /* FinishLvl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A75E24B2496B6BD00CDB10D /* FinishLvl.xib */; };
+		3A75E24E2496B6D400CDB10D /* FinishLvlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A75E24D2496B6D400CDB10D /* FinishLvlView.swift */; };
+		3A75E2502496B71900CDB10D /* LettersHelp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A75E24F2496B71900CDB10D /* LettersHelp.xib */; };
+		3A75E2522496B72A00CDB10D /* LettersHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A75E2512496B72A00CDB10D /* LettersHelpView.swift */; };
+		3A75E25524978D6F00CDB10D /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A75E25424978D6F00CDB10D /* backgroundMusic.mp3 */; };
+		3AD4688224A8AA69006A82CF /* boughtCoins.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3AD4688124A8AA69006A82CF /* boughtCoins.wav */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A7079CE2494C01D00403419 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A7079AF2494C01A00403419 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A7079B62494C01A00403419;
+			remoteInfo = MuzTuzz;
+		};
+		3A7079D92494C01D00403419 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A7079AF2494C01A00403419 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A7079B62494C01A00403419;
+			remoteInfo = MuzTuzz;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A2C79052498A3E700897843 /* LevelsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsInfo.swift; sourceTree = "<group>"; };
+		3A2C790B249B6E9600897843 /* ResetAll.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ResetAll.wav; sourceTree = "<group>"; };
+		3A2C790D249B6E9600897843 /* wrongAnswer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrongAnswer.wav; sourceTree = "<group>"; };
+		3A2C790F249B6E9600897843 /* OnMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = OnMusic.wav; sourceTree = "<group>"; };
+		3A2C7911249B6E9600897843 /* OffMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = OffMusic.wav; sourceTree = "<group>"; };
+		3A2C7913249B6E9600897843 /* common.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = common.wav; sourceTree = "<group>"; };
+		3A2C7914249B6E9600897843 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
+		3A2C7915249B6E9600897843 /* WarningView.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = WarningView.wav; sourceTree = "<group>"; };
+		3A2C7916249B6E9600897843 /* OpenPremia.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = OpenPremia.wav; sourceTree = "<group>"; };
+		3A2C792F249B702A00897843 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		3A2C7931249D29EC00897843 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
+		3A2C7933249DE01400897843 /* swipe2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = swipe2.wav; sourceTree = "<group>"; };
+		3A2C7935249DE4D300897843 /* spendMoney.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = spendMoney.wav; sourceTree = "<group>"; };
+		3A2C7937249DF1E000897843 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		3A2C7939249E0B8B00897843 /* appearingView.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = appearingView.wav; sourceTree = "<group>"; };
+		3A2C793B24A219BA00897843 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
+		3A2C793D24A4633300897843 /* AuthorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsViewController.swift; sourceTree = "<group>"; };
+		3A2C794324A4829000897843 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		3A2C794524A482B200897843 /* MuzTuzz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MuzTuzz.entitlements; sourceTree = "<group>"; };
+		3A2C794624A48D6F00897843 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		3A2C794824A4C02000897843 /* MuzTusProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuzTusProducts.swift; sourceTree = "<group>"; };
+		3A2C794B24A4C2BF00897843 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		3A6F642F24A5D09C0075D3B6 /* GMAds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMAds.swift; sourceTree = "<group>"; };
+		3A7079B72494C01A00403419 /* МузТус.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "МузТус.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A7079BA2494C01A00403419 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3A7079BC2494C01A00403419 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3A7079BE2494C01A00403419 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		3A7079C32494C01D00403419 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A7079C82494C01D00403419 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A7079CD2494C01D00403419 /* MuzTuzzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuzTuzzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A7079D12494C01D00403419 /* MuzTuzzTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuzTuzzTests.swift; sourceTree = "<group>"; };
+		3A7079D32494C01D00403419 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A7079D82494C01D00403419 /* MuzTuzzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuzTuzzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A7079DC2494C01D00403419 /* MuzTuzzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuzTuzzUITests.swift; sourceTree = "<group>"; };
+		3A7079DE2494C01D00403419 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A7079EA2494DB7D00403419 /* TopBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopBar.xib; sourceTree = "<group>"; };
+		3A7079EF2494FC8400403419 /* PremiaSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiaSelectVC.swift; sourceTree = "<group>"; };
+		3A7079F12495035A00403419 /* PremiaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiaCell.swift; sourceTree = "<group>"; };
+		3A7079F424950A0000403419 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		3A7079F724950F8700403419 /* CommonFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFuncs.swift; sourceTree = "<group>"; };
+		3A75E2342495157800CDB10D /* PremiaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiaVC.swift; sourceTree = "<group>"; };
+		3A75E236249515B800CDB10D /* PremiaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiaCollectionViewCell.swift; sourceTree = "<group>"; };
+		3A75E23A24952DF000CDB10D /* LevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
+		3A75E23C24965F0400CDB10D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		3A75E23E24967D3C00CDB10D /* Helps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helps.swift; sourceTree = "<group>"; };
+		3A75E2402496835700CDB10D /* HelpQuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpQuestionView.xib; sourceTree = "<group>"; };
+		3A75E2452496875800CDB10D /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		3A75E24B2496B6BD00CDB10D /* FinishLvl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinishLvl.xib; sourceTree = "<group>"; };
+		3A75E24D2496B6D400CDB10D /* FinishLvlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishLvlView.swift; sourceTree = "<group>"; };
+		3A75E24F2496B71900CDB10D /* LettersHelp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LettersHelp.xib; sourceTree = "<group>"; };
+		3A75E2512496B72A00CDB10D /* LettersHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersHelpView.swift; sourceTree = "<group>"; };
+		3A75E25424978D6F00CDB10D /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		3AD4688124A8AA69006A82CF /* boughtCoins.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boughtCoins.wav; sourceTree = "<group>"; };
+		3AD4688424A8B03E006A82CF /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3AD4688624A8B0E0006A82CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3AD4688724A8B0FC006A82CF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		3AD4688824A8B102006A82CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4FF9A1C51A8635B465A08F9A /* Pods-MuzTuzz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuzTuzz.debug.xcconfig"; path = "Target Support Files/Pods-MuzTuzz/Pods-MuzTuzz.debug.xcconfig"; sourceTree = "<group>"; };
+		8E5A8596BA6EEBAE340C83AF /* Pods_MuzTuzz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuzTuzz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A028E8644E1FADB47B5518A6 /* Pods-MuzTuzz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuzTuzz.release.xcconfig"; path = "Target Support Files/Pods-MuzTuzz/Pods-MuzTuzz.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A7079B42494C01A00403419 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21E98D9FCEA376FBF402C244 /* Pods_MuzTuzz.framework in Frameworks */,
+				3A2C794424A4829000897843 /* StoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A7079CA2494C01D00403419 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A7079D52494C01D00403419 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FF183DE21B34AE301A291EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4FF9A1C51A8635B465A08F9A /* Pods-MuzTuzz.debug.xcconfig */,
+				A028E8644E1FADB47B5518A6 /* Pods-MuzTuzz.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3A2C794A24A4C2AB00897843 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				3A2C794824A4C02000897843 /* MuzTusProducts.swift */,
+				3A2C794B24A4C2BF00897843 /* IAPHelper.swift */,
+				3A6F642F24A5D09C0075D3B6 /* GMAds.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		3A7079AE2494C01A00403419 = {
+			isa = PBXGroup;
+			children = (
+				3A7079B92494C01A00403419 /* MuzTuzz */,
+				3A7079D02494C01D00403419 /* MuzTuzzTests */,
+				3A7079DB2494C01D00403419 /* MuzTuzzUITests */,
+				3A7079B82494C01A00403419 /* Products */,
+				0FF183DE21B34AE301A291EB /* Pods */,
+				7182F77CA3BE23E5538C0842 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+			usesTabs = 0;
+		};
+		3A7079B82494C01A00403419 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A7079B72494C01A00403419 /* МузТус.app */,
+				3A7079CD2494C01D00403419 /* MuzTuzzTests.xctest */,
+				3A7079D82494C01D00403419 /* MuzTuzzUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A7079B92494C01A00403419 /* MuzTuzz */ = {
+			isa = PBXGroup;
+			children = (
+				3A2C794524A482B200897843 /* MuzTuzz.entitlements */,
+				3A75E25324978D6100CDB10D /* Audio */,
+				3A2C794A24A4C2AB00897843 /* Shop */,
+				3A75E2392495272C00CDB10D /* MainViews */,
+				3A75E238249516AB00CDB10D /* Cells */,
+				3A7079F624950F6D00403419 /* CommonFunc */,
+				3A7079F32495063E00403419 /* XIBs */,
+				3A7079BA2494C01A00403419 /* AppDelegate.swift */,
+				3A7079BC2494C01A00403419 /* SceneDelegate.swift */,
+				3A7079C02494C01A00403419 /* Main.storyboard */,
+				3A7079C32494C01D00403419 /* Assets.xcassets */,
+				3A7079C52494C01D00403419 /* LaunchScreen.storyboard */,
+				3A7079C82494C01D00403419 /* Info.plist */,
+			);
+			path = MuzTuzz;
+			sourceTree = "<group>";
+		};
+		3A7079D02494C01D00403419 /* MuzTuzzTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A7079D12494C01D00403419 /* MuzTuzzTests.swift */,
+				3A7079D32494C01D00403419 /* Info.plist */,
+			);
+			path = MuzTuzzTests;
+			sourceTree = "<group>";
+		};
+		3A7079DB2494C01D00403419 /* MuzTuzzUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3A7079DC2494C01D00403419 /* MuzTuzzUITests.swift */,
+				3A7079DE2494C01D00403419 /* Info.plist */,
+			);
+			path = MuzTuzzUITests;
+			sourceTree = "<group>";
+		};
+		3A7079F32495063E00403419 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				3A75E24A2496B69300CDB10D /* FinishLvlXIB */,
+				3A75E2492496AE9500CDB10D /* LettersHelpXIB */,
+				3A75E2442496839500CDB10D /* YesNoMessage */,
+				3A75E2482496AE7D00CDB10D /* TopBar */,
+			);
+			path = XIBs;
+			sourceTree = "<group>";
+		};
+		3A7079F624950F6D00403419 /* CommonFunc */ = {
+			isa = PBXGroup;
+			children = (
+				3A7079F724950F8700403419 /* CommonFuncs.swift */,
+				3A75E23C24965F0400CDB10D /* Persistence.swift */,
+				3A75E23E24967D3C00CDB10D /* Helps.swift */,
+				3A2C79052498A3E700897843 /* LevelsInfo.swift */,
+			);
+			path = CommonFunc;
+			sourceTree = "<group>";
+		};
+		3A75E238249516AB00CDB10D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3A7079F12495035A00403419 /* PremiaCell.swift */,
+				3A75E236249515B800CDB10D /* PremiaCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3A75E2392495272C00CDB10D /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				3A2C7931249D29EC00897843 /* StartScreenViewController.swift */,
+				3A7079BE2494C01A00403419 /* MainMenu.swift */,
+				3A7079EF2494FC8400403419 /* PremiaSelectVC.swift */,
+				3A75E2342495157800CDB10D /* PremiaVC.swift */,
+				3A75E23A24952DF000CDB10D /* LevelViewController.swift */,
+				3A2C7937249DF1E000897843 /* TutorialViewController.swift */,
+				3A2C793B24A219BA00897843 /* StatisticViewController.swift */,
+				3A2C793D24A4633300897843 /* AuthorsViewController.swift */,
+				3A2C794624A48D6F00897843 /* ShopViewController.swift */,
+			);
+			path = MainViews;
+			sourceTree = "<group>";
+		};
+		3A75E2442496839500CDB10D /* YesNoMessage */ = {
+			isa = PBXGroup;
+			children = (
+				3A75E2402496835700CDB10D /* HelpQuestionView.xib */,
+				3A75E2452496875800CDB10D /* MessageView.swift */,
+			);
+			path = YesNoMessage;
+			sourceTree = "<group>";
+		};
+		3A75E2482496AE7D00CDB10D /* TopBar */ = {
+			isa = PBXGroup;
+			children = (
+				3A7079EA2494DB7D00403419 /* TopBar.xib */,
+				3A7079F424950A0000403419 /* TopBar.swift */,
+			);
+			path = TopBar;
+			sourceTree = "<group>";
+		};
+		3A75E2492496AE9500CDB10D /* LettersHelpXIB */ = {
+			isa = PBXGroup;
+			children = (
+				3A75E24F2496B71900CDB10D /* LettersHelp.xib */,
+				3A75E2512496B72A00CDB10D /* LettersHelpView.swift */,
+			);
+			path = LettersHelpXIB;
+			sourceTree = "<group>";
+		};
+		3A75E24A2496B69300CDB10D /* FinishLvlXIB */ = {
+			isa = PBXGroup;
+			children = (
+				3A75E24B2496B6BD00CDB10D /* FinishLvl.xib */,
+				3A75E24D2496B6D400CDB10D /* FinishLvlView.swift */,
+			);
+			path = FinishLvlXIB;
+			sourceTree = "<group>";
+		};
+		3A75E25324978D6100CDB10D /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				3AD4688124A8AA69006A82CF /* boughtCoins.wav */,
+				3A2C7913249B6E9600897843 /* common.wav */,
+				3A2C7914249B6E9600897843 /* win.wav */,
+				3A2C7939249E0B8B00897843 /* appearingView.wav */,
+				3A2C790D249B6E9600897843 /* wrongAnswer.wav */,
+				3A2C7933249DE01400897843 /* swipe2.wav */,
+				3A2C7935249DE4D300897843 /* spendMoney.wav */,
+				3A2C7911249B6E9600897843 /* OffMusic.wav */,
+				3A2C790F249B6E9600897843 /* OnMusic.wav */,
+				3A2C7916249B6E9600897843 /* OpenPremia.wav */,
+				3A2C790B249B6E9600897843 /* ResetAll.wav */,
+				3A2C7915249B6E9600897843 /* WarningView.wav */,
+				3A75E25424978D6F00CDB10D /* backgroundMusic.mp3 */,
+				3A2C792F249B702A00897843 /* Audio.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		7182F77CA3BE23E5538C0842 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A2C794324A4829000897843 /* StoreKit.framework */,
+				8E5A8596BA6EEBAE340C83AF /* Pods_MuzTuzz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A7079B62494C01A00403419 /* MuzTuzz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A7079E12494C01D00403419 /* Build configuration list for PBXNativeTarget "MuzTuzz" */;
+			buildPhases = (
+				0B85252B8994AD7A8054E48E /* [CP] Check Pods Manifest.lock */,
+				3A7079B32494C01A00403419 /* Sources */,
+				3A7079B42494C01A00403419 /* Frameworks */,
+				3A7079B52494C01A00403419 /* Resources */,
+				D354C70612DCF92BCFBBE492 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MuzTuzz;
+			productName = MuzTuzz;
+			productReference = 3A7079B72494C01A00403419 /* МузТус.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A7079CC2494C01D00403419 /* MuzTuzzTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A7079E42494C01D00403419 /* Build configuration list for PBXNativeTarget "MuzTuzzTests" */;
+			buildPhases = (
+				3A7079C92494C01D00403419 /* Sources */,
+				3A7079CA2494C01D00403419 /* Frameworks */,
+				3A7079CB2494C01D00403419 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A7079CF2494C01D00403419 /* PBXTargetDependency */,
+			);
+			name = MuzTuzzTests;
+			productName = MuzTuzzTests;
+			productReference = 3A7079CD2494C01D00403419 /* MuzTuzzTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3A7079D72494C01D00403419 /* MuzTuzzUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A7079E72494C01D00403419 /* Build configuration list for PBXNativeTarget "MuzTuzzUITests" */;
+			buildPhases = (
+				3A7079D42494C01D00403419 /* Sources */,
+				3A7079D52494C01D00403419 /* Frameworks */,
+				3A7079D62494C01D00403419 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A7079DA2494C01D00403419 /* PBXTargetDependency */,
+			);
+			name = MuzTuzzUITests;
+			productName = MuzTuzzUITests;
+			productReference = 3A7079D82494C01D00403419 /* MuzTuzzUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A7079AF2494C01A00403419 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = Anton;
+				TargetAttributes = {
+					3A7079B62494C01A00403419 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					3A7079CC2494C01D00403419 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 3A7079B62494C01A00403419;
+					};
+					3A7079D72494C01D00403419 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 3A7079B62494C01A00403419;
+					};
+				};
+			};
+			buildConfigurationList = 3A7079B22494C01A00403419 /* Build configuration list for PBXProject "MuzTuzz" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				ru,
+				Base,
+			);
+			mainGroup = 3A7079AE2494C01A00403419;
+			productRefGroup = 3A7079B82494C01A00403419 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A7079B62494C01A00403419 /* MuzTuzz */,
+				3A7079CC2494C01D00403419 /* MuzTuzzTests */,
+				3A7079D72494C01D00403419 /* MuzTuzzUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A7079B52494C01A00403419 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A7079EB2494DB7D00403419 /* TopBar.xib in Resources */,
+				3A75E24C2496B6BD00CDB10D /* FinishLvl.xib in Resources */,
+				3A2C7925249B6E9600897843 /* common.wav in Resources */,
+				3A2C7921249B6E9600897843 /* OnMusic.wav in Resources */,
+				3A2C7926249B6E9600897843 /* win.wav in Resources */,
+				3A2C793A249E0B8B00897843 /* appearingView.wav in Resources */,
+				3A75E25524978D6F00CDB10D /* backgroundMusic.mp3 in Resources */,
+				3A75E2412496835700CDB10D /* HelpQuestionView.xib in Resources */,
+				3A2C7936249DE4D300897843 /* spendMoney.wav in Resources */,
+				3A2C7923249B6E9600897843 /* OffMusic.wav in Resources */,
+				3A2C7928249B6E9600897843 /* OpenPremia.wav in Resources */,
+				3A75E2502496B71900CDB10D /* LettersHelp.xib in Resources */,
+				3AD4688224A8AA69006A82CF /* boughtCoins.wav in Resources */,
+				3A7079C72494C01D00403419 /* LaunchScreen.storyboard in Resources */,
+				3A7079C42494C01D00403419 /* Assets.xcassets in Resources */,
+				3A7079C22494C01A00403419 /* Main.storyboard in Resources */,
+				3A2C791F249B6E9600897843 /* wrongAnswer.wav in Resources */,
+				3A2C791D249B6E9600897843 /* ResetAll.wav in Resources */,
+				3A2C7927249B6E9600897843 /* WarningView.wav in Resources */,
+				3A2C7934249DE01500897843 /* swipe2.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A7079CB2494C01D00403419 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A7079D62494C01D00403419 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B85252B8994AD7A8054E48E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuzTuzz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D354C70612DCF92BCFBBE492 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuzTuzz/Pods-MuzTuzz-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuzTuzz/Pods-MuzTuzz-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuzTuzz/Pods-MuzTuzz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A7079B32494C01A00403419 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A75E23D24965F0400CDB10D /* Persistence.swift in Sources */,
+				3A75E2352495157800CDB10D /* PremiaVC.swift in Sources */,
+				3A2C794724A48D6F00897843 /* ShopViewController.swift in Sources */,
+				3A2C79062498A3E700897843 /* LevelsInfo.swift in Sources */,
+				3A2C794C24A4C2BF00897843 /* IAPHelper.swift in Sources */,
+				3A2C793C24A219BA00897843 /* StatisticViewController.swift in Sources */,
+				3A2C7932249D29EC00897843 /* StartScreenViewController.swift in Sources */,
+				3A2C794924A4C02000897843 /* MuzTusProducts.swift in Sources */,
+				3A75E23B24952DF000CDB10D /* LevelViewController.swift in Sources */,
+				3A7079F524950A0000403419 /* TopBar.swift in Sources */,
+				3A75E2522496B72A00CDB10D /* LettersHelpView.swift in Sources */,
+				3A7079BF2494C01A00403419 /* MainMenu.swift in Sources */,
+				3A2C7938249DF1E000897843 /* TutorialViewController.swift in Sources */,
+				3A75E237249515B800CDB10D /* PremiaCollectionViewCell.swift in Sources */,
+				3A75E23F24967D3C00CDB10D /* Helps.swift in Sources */,
+				3A6F643024A5D09C0075D3B6 /* GMAds.swift in Sources */,
+				3A2C7930249B702A00897843 /* Audio.swift in Sources */,
+				3A7079F824950F8700403419 /* CommonFuncs.swift in Sources */,
+				3A7079BB2494C01A00403419 /* AppDelegate.swift in Sources */,
+				3A2C793E24A4633300897843 /* AuthorsViewController.swift in Sources */,
+				3A7079F02494FC8400403419 /* PremiaSelectVC.swift in Sources */,
+				3A75E24E2496B6D400CDB10D /* FinishLvlView.swift in Sources */,
+				3A7079BD2494C01A00403419 /* SceneDelegate.swift in Sources */,
+				3A75E2462496875900CDB10D /* MessageView.swift in Sources */,
+				3A7079F22495035A00403419 /* PremiaCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A7079C92494C01D00403419 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A7079D22494C01D00403419 /* MuzTuzzTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A7079D42494C01D00403419 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A7079DD2494C01D00403419 /* MuzTuzzUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A7079CF2494C01D00403419 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A7079B62494C01A00403419 /* MuzTuzz */;
+			targetProxy = 3A7079CE2494C01D00403419 /* PBXContainerItemProxy */;
+		};
+		3A7079DA2494C01D00403419 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A7079B62494C01A00403419 /* MuzTuzz */;
+			targetProxy = 3A7079D92494C01D00403419 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3A7079C02494C01A00403419 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AD4688624A8B0E0006A82CF /* Base */,
+				3AD4688724A8B0FC006A82CF /* ru */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3A7079C52494C01D00403419 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AD4688424A8B03E006A82CF /* ru */,
+				3AD4688824A8B102006A82CF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A7079DF2494C01D00403419 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3A7079E02494C01D00403419 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A7079E22494C01D00403419 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FF9A1C51A8635B465A08F9A /* Pods-MuzTuzz.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MuzTuzz/MuzTuzz.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6GP96NFRQX;
+				INFOPLIST_FILE = MuzTuzz/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kocoukot.MuzTuz.muztuzz;
+				PRODUCT_NAME = "МузТус";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3A7079E32494C01D00403419 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A028E8644E1FADB47B5518A6 /* Pods-MuzTuzz.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MuzTuzz/MuzTuzz.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6GP96NFRQX;
+				INFOPLIST_FILE = MuzTuzz/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kocoukot.MuzTuz.muztuzz;
+				PRODUCT_NAME = "МузТус";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		3A7079E52494C01D00403419 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6GP96NFRQX;
+				INFOPLIST_FILE = MuzTuzzTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kocoukot.MuzTuzzTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuzTuzz.app/MuzTuzz";
+			};
+			name = Debug;
+		};
+		3A7079E62494C01D00403419 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6GP96NFRQX;
+				INFOPLIST_FILE = MuzTuzzTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kocoukot.MuzTuzzTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuzTuzz.app/MuzTuzz";
+			};
+			name = Release;
+		};
+		3A7079E82494C01D00403419 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6GP96NFRQX;
+				INFOPLIST_FILE = MuzTuzzUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kocoukot.MuzTuzzUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MuzTuzz;
+			};
+			name = Debug;
+		};
+		3A7079E92494C01D00403419 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6GP96NFRQX;
+				INFOPLIST_FILE = MuzTuzzUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kocoukot.MuzTuzzUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MuzTuzz;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A7079B22494C01A00403419 /* Build configuration list for PBXProject "MuzTuzz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A7079DF2494C01D00403419 /* Debug */,
+				3A7079E02494C01D00403419 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A7079E12494C01D00403419 /* Build configuration list for PBXNativeTarget "MuzTuzz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A7079E22494C01D00403419 /* Debug */,
+				3A7079E32494C01D00403419 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A7079E42494C01D00403419 /* Build configuration list for PBXNativeTarget "MuzTuzzTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A7079E52494C01D00403419 /* Debug */,
+				3A7079E62494C01D00403419 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A7079E72494C01D00403419 /* Build configuration list for PBXNativeTarget "MuzTuzzUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A7079E82494C01D00403419 /* Debug */,
+				3A7079E92494C01D00403419 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A7079AF2494C01A00403419 /* Project object */;
+}

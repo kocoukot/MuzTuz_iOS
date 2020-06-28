@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleAspectFit" id="iN0-l3-epB" customClass="MessageView" customModule="МузТус" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="175"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="W5G-VA-yBY">
+                    <rect key="frame" x="20" y="10" width="210" height="103"/>
+                    <mutableString key="text">«Шанс - он не получка, не аванс», - как поется в одной известной пиратской песне. Но вот штрафа или выговора еще можно избежать, и вы обращаетесь к залу с просьбой назвать любимую песню у этого исполнителя. \nСмело берите подсказку «Название песни и альбома»!</mutableString>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zO2-hf-7zP">
+                    <rect key="frame" x="20" y="123" width="210" height="42"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cgw-1i-mW3">
+                            <rect key="frame" x="0.0" y="0.0" width="95" height="42"/>
+                            <state key="normal" image="yes"/>
+                            <state key="selected" image="yes_tap"/>
+                            <state key="highlighted" image="yes_tap"/>
+                            <connections>
+                                <action selector="yesAnswer:" destination="iN0-l3-epB" eventType="touchUpInside" id="ILP-FE-KBO"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnr-N8-LV5">
+                            <rect key="frame" x="115" y="0.0" width="95" height="42"/>
+                            <state key="normal" image="no"/>
+                            <state key="selected" image="no_tap"/>
+                            <state key="highlighted" image="no_tap"/>
+                            <connections>
+                                <action selector="noAnswer:" destination="iN0-l3-epB" eventType="touchUpInside" id="E8H-Fh-Ozx"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zO2-hf-7zP" secondAttribute="height" multiplier="5:1" id="hD4-I4-7ss"/>
+                    </constraints>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6w-ls-0L2">
+                    <rect key="frame" x="83" y="123" width="84" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="w6w-ls-0L2" secondAttribute="height" multiplier="2:1" id="LcI-F9-UML"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <state key="normal" image="ok"/>
+                    <state key="selected" image="ok_tap"/>
+                    <state key="highlighted" image="ok_tap"/>
+                    <connections>
+                        <action selector="okAnswer:" destination="iN0-l3-epB" eventType="touchUpInside" id="1tl-s2-gYU"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.95989221329999996" green="0.91141486169999997" blue="0.80782818789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="W5G-VA-yBY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="3I3-i3-BwU"/>
+                <constraint firstItem="zO2-hf-7zP" firstAttribute="top" secondItem="W5G-VA-yBY" secondAttribute="bottom" constant="10" id="6LC-5E-vH9"/>
+                <constraint firstItem="zO2-hf-7zP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="FPE-N2-J19"/>
+                <constraint firstItem="w6w-ls-0L2" firstAttribute="top" secondItem="W5G-VA-yBY" secondAttribute="bottom" constant="10" id="Ibd-ke-mSl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="zO2-hf-7zP" secondAttribute="bottom" constant="10" id="M1U-tx-NDc"/>
+                <constraint firstItem="W5G-VA-yBY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="SL2-dn-pfp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zO2-hf-7zP" secondAttribute="trailing" constant="20" id="V0J-yL-du4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="w6w-ls-0L2" secondAttribute="bottom" constant="10" id="VTu-0C-zVb"/>
+                <constraint firstItem="zO2-hf-7zP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gcG-oc-mnU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="W5G-VA-yBY" secondAttribute="trailing" constant="20" id="vZc-NA-tAF"/>
+                <constraint firstItem="w6w-ls-0L2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wId-vZ-GQH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="buttonsStackView" destination="zO2-hf-7zP" id="feB-kP-Bsb"/>
+                <outlet property="messageLabel" destination="W5G-VA-yBY" id="ic6-bI-Uhi"/>
+                <outlet property="noButton" destination="tnr-N8-LV5" id="pvf-PV-ssW"/>
+                <outlet property="okButton" destination="w6w-ls-0L2" id="Km1-Uq-DxC"/>
+                <outlet property="yesButton" destination="Cgw-1i-mW3" id="w3p-d2-V3U"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="720.08995502248877"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="no" width="228" height="123"/>
+        <image name="no_tap" width="228" height="123"/>
+        <image name="ok" width="241" height="135"/>
+        <image name="ok_tap" width="228" height="122"/>
+        <image name="yes" width="228" height="123"/>
+        <image name="yes_tap" width="229" height="123"/>
+    </resources>
+</document>

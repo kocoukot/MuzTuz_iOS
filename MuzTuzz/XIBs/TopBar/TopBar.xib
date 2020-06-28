@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TopBar" customModule="MuzTuzz" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="475" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Owh-X8-3tG">
+                    <rect key="frame" x="425" y="10" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Owh-X8-3tG" secondAttribute="height" multiplier="1:1" id="yD5-Qa-5TW"/>
+                    </constraints>
+                    <state key="normal" image="moneta">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                    </state>
+                    <connections>
+                        <action selector="addCoinsButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="uU6-8y-cUd"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999999" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Nwg-h5-QTV">
+                    <rect key="frame" x="362.5" y="19.5" width="52.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDv-eW-pyG">
+                    <rect key="frame" x="315" y="10" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="jDv-eW-pyG" secondAttribute="height" multiplier="1:1" id="gY3-Nz-pT1"/>
+                    </constraints>
+                    <state key="normal" image="zvezda_ochki"/>
+                    <connections>
+                        <action selector="removeCoins:" destination="iN0-l3-epB" eventType="touchUpInside" id="J2D-D1-kRo"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzn-sN-V9v">
+                    <rect key="frame" x="0.0" y="10" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Qzn-sN-V9v" secondAttribute="height" multiplier="1:1" id="XKe-Z9-WGV"/>
+                    </constraints>
+                    <state key="normal" image="nazad"/>
+                    <state key="selected" image="nazad_tap"/>
+                    <state key="highlighted" image="nazad_tap"/>
+                    <connections>
+                        <action selector="topBarBackButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="DvV-tS-DOx"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ta-k7-dor">
+                    <rect key="frame" x="120" y="10" width="26.5" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="4Ta-k7-dor" secondAttribute="height" multiplier="2:3" id="a6p-Rv-uST"/>
+                    </constraints>
+                    <state key="normal" image="zvuk"/>
+                    <state key="selected" image="zvuk_tap"/>
+                    <state key="highlighted" image="zvuk_tap"/>
+                    <connections>
+                        <action selector="zvukButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="1Ds-hW-5lB"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ho8-5O-eWg">
+                    <rect key="frame" x="263" y="19.5" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ow-2m-CIB">
+                    <rect key="frame" x="60" y="10" width="30" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="7Ow-2m-CIB" secondAttribute="height" multiplier="3:4" id="Jwt-NZ-TjO"/>
+                    </constraints>
+                    <state key="normal" image="melodiy"/>
+                    <state key="selected" image="melodiy_tap"/>
+                    <state key="highlighted" image="melodiy_tap"/>
+                    <connections>
+                        <action selector="melodySelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="fi1-eg-eEd"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.36537444590000001" green="0.55835592749999996" blue="0.45096778869999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="Qzn-sN-V9v" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="1SH-zz-JAx"/>
+                <constraint firstItem="4Ta-k7-dor" firstAttribute="leading" secondItem="7Ow-2m-CIB" secondAttribute="trailing" constant="30" id="4Ua-Yt-N47"/>
+                <constraint firstItem="7Ow-2m-CIB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="60" id="62Z-Nr-b1x"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Owh-X8-3tG" secondAttribute="trailing" constant="10" id="8s6-BL-uPd"/>
+                <constraint firstItem="4Ta-k7-dor" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="GTO-g9-S0e"/>
+                <constraint firstItem="Nwg-h5-QTV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Gii-Lq-bP4"/>
+                <constraint firstAttribute="bottom" secondItem="Owh-X8-3tG" secondAttribute="bottom" constant="10" id="Iim-N3-p53"/>
+                <constraint firstItem="7Ow-2m-CIB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="JWp-x5-lhw"/>
+                <constraint firstItem="7Ow-2m-CIB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="KAv-AM-K0h"/>
+                <constraint firstItem="Owh-X8-3tG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Vyp-Y8-Ac9"/>
+                <constraint firstItem="jDv-eW-pyG" firstAttribute="leading" secondItem="Ho8-5O-eWg" secondAttribute="trailing" constant="10" id="XaU-He-kHc"/>
+                <constraint firstItem="Qzn-sN-V9v" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="YeM-4A-y1R"/>
+                <constraint firstAttribute="bottom" secondItem="7Ow-2m-CIB" secondAttribute="bottom" constant="10" id="ZNQ-LM-5zC"/>
+                <constraint firstItem="jDv-eW-pyG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ZhX-hf-kKi"/>
+                <constraint firstAttribute="bottom" secondItem="jDv-eW-pyG" secondAttribute="bottom" constant="10" id="aKS-K1-gn1"/>
+                <constraint firstItem="4Ta-k7-dor" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="b1a-kU-Nrx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Qzn-sN-V9v" secondAttribute="bottom" constant="10" id="bKJ-km-mxh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jDv-eW-pyG" secondAttribute="trailing" constant="120" id="cEc-Cx-fte"/>
+                <constraint firstItem="Owh-X8-3tG" firstAttribute="leading" secondItem="Nwg-h5-QTV" secondAttribute="trailing" constant="10" id="hQy-gR-NIb"/>
+                <constraint firstItem="Owh-X8-3tG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ice-h0-MjA"/>
+                <constraint firstItem="Ho8-5O-eWg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="j33-Aw-pv0"/>
+                <constraint firstItem="Nwg-h5-QTV" firstAttribute="leading" secondItem="jDv-eW-pyG" secondAttribute="trailing" constant="7.5" id="oaR-Yy-BVY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="4Ta-k7-dor" secondAttribute="bottom" constant="10" id="spo-wn-oTR"/>
+                <constraint firstItem="jDv-eW-pyG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="xZT-ao-JK5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="backButtonOutlet" destination="Qzn-sN-V9v" id="CwM-zo-sTN"/>
+                <outlet property="coinsAmountLabel" destination="Nwg-h5-QTV" id="qUM-CX-iVa"/>
+                <outlet property="melodyButtonOutlet" destination="7Ow-2m-CIB" id="V9a-3w-wtc"/>
+                <outlet property="starsAmountLabel" destination="Ho8-5O-eWg" id="fBQ-dK-AVZ"/>
+                <outlet property="zvukButtonOutlet" destination="4Ta-k7-dor" id="GjJ-oJ-d1i"/>
+            </connections>
+            <point key="canvasLocation" x="143.19999999999999" y="411.09445277361323"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="melodiy" width="60" height="87"/>
+        <image name="melodiy_tap" width="61" height="86"/>
+        <image name="moneta" width="79" height="81"/>
+        <image name="nazad" width="108" height="109"/>
+        <image name="nazad_tap" width="113" height="114"/>
+        <image name="zvezda_ochki" width="91" height="81"/>
+        <image name="zvuk" width="51" height="84"/>
+        <image name="zvuk_tap" width="53" height="88"/>
+    </resources>
+</document>
