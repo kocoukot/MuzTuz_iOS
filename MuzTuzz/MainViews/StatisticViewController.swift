@@ -30,12 +30,15 @@ class StatisticViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let timeFormat = DateFormatter()
         backView.layer.cornerRadius = 15
         let timeLabelList = [sumGameTime,fastestTime,longestTime]
         if infoList[0] > 0 {
-        for i in 0..<timeLabelList.count{
+        for i in 1..<timeLabelList.count{
             timeLabelList[i]?.text! += " \(String(format: "%.3f",infoList[i])) сек."
         }
+            timeLabelList[0]?.text! += secondsToHoursMinutesSeconds(seconds: Int(infoList[0].rounded()))   // " \(String(format: "%.3f",infoList[0])) сек."
+
         fastestLevelImage.image = UIImage(named: LevelsInfo().premiaImagesList[Int(infoList[3])][Int(infoList[4])])
         longestImage.image = UIImage(named: LevelsInfo().premiaImagesList[Int(infoList[5])][Int(infoList[6])])
         
@@ -46,6 +49,10 @@ class StatisticViewController: UIViewController {
             backView.isHidden = true
             stackView.isHidden = true
         }
+    }
+    
+    func secondsToHoursMinutesSeconds (seconds : Int) -> String {
+      return " \((seconds % 3600) / 60) мин. \((seconds % 3600) % 60) сек."
     }
     
 

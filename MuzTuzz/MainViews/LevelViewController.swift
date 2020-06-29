@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import AVFoundation
+import AudioToolbox
+
 
 protocol LevelEndDelegate {
     func levelClosedUpdate()
@@ -71,12 +72,12 @@ class LevelViewController: UIViewController, UITextFieldDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if Persistence.shared.freeCoinsGotInt >= 5{
+        if Persistence.shared.freeCoinsGotInt >= 1{
             Persistence.shared.freeCoinsGotInt = 0
         }
         levelSolved =  SaveLoadRealm().getPremiaLevelsInfo(levelInfo!.premiaID)[levelInfo!.lvlID]
         starsViewList = [finishLevelView.firstStarImage, finishLevelView.secondStarImage, finishLevelView.thirdStarImage]
-        
+        FreeCoinsRewardClass.freeAdd.delegate = self
         answerButton.layer.cornerRadius = 5
         topBarVC.delegate = self
         messageView.delegate = self
@@ -153,10 +154,13 @@ class LevelViewController: UIViewController, UITextFieldDelegate  {
                         i += 1
                     }
                 }
+                break
             }
         }
         if !levelSolved{
             SoundsPlay.shared.playSound("wrongAnswer", "wav")
+            SoundsPlay.shared.vibrateNotify()
+            
         }
     }
     
@@ -239,10 +243,12 @@ class LevelViewController: UIViewController, UITextFieldDelegate  {
     
     
     @IBAction func freeCoinsInLevel(_ sender: Any) {
-        FreeCoinsRewardClass.freeAdd.freeCoinsAdShow(self)
-//        topBarVC.coinsStarsUpdate()
+
+       if FreeCoinsRewardClass.freeAdd.freeCoinsAdShow(self){
         topBarVC.coinsAmountLabel.text = ("\(Persistence.shared.totalCoins!)")
-        freeCoinsButton.isHidden = true
+            freeCoinsButton.isHidden = true
+        }
+//        topBarVC.coinsStarsUpdate()
     }
     
     private func showMessageView(_ num: Int){
@@ -361,5 +367,12 @@ extension LevelViewController: FinishLvlViewDelegate{
     func okCkicked() {
         dismiss(animated: true)
     }
+}
+
+extension LevelViewController: FreeCoinsDelegate{
+    func freeCoinsSuccess() {
+        topBarVC.coinsStarsUpdate()
+    }
+    
     
 }

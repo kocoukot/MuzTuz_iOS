@@ -134,6 +134,8 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
         }
         if !levelSolved{
             SoundsPlay.shared.playSound("wrongAnswer", "wav")
+            SoundsPlay.shared.vibrateNotify()
+
         }
     }
     

@@ -9,8 +9,14 @@
 import Foundation
 import GoogleMobileAds
 
+protocol FreeCoinsDelegate: NSObject {
+    func freeCoinsSuccess()
+}
+
 
 class FreeCoinsRewardClass: NSObject, GADRewardedAdDelegate, GADInterstitialDelegate{
+    weak var delegate:FreeCoinsDelegate?
+    
     let adID = "ca-app-pub-8364051315582457/6579562744"
     let testAdID = "ca-app-pub-3940256099942544/1712485313"
     
@@ -24,9 +30,8 @@ class FreeCoinsRewardClass: NSObject, GADRewardedAdDelegate, GADInterstitialDele
     var interstitial: GADInterstitial!
     
     func adLoad(){
-//        rewardedAd = GADRewardedAd(adUnitID: testAdID)
-
-        rewardedAd = GADRewardedAd(adUnitID: adID)
+        rewardedAd = GADRewardedAd(adUnitID: testAdID)
+//        rewardedAd = GADRewardedAd(adUnitID: adID)
         
         rewardedAd?.load(GADRequest()) { error in
             if let error = error {
@@ -38,23 +43,25 @@ class FreeCoinsRewardClass: NSObject, GADRewardedAdDelegate, GADInterstitialDele
         }
     }
     
-    func freeCoinsAdShow(_ view: UIViewController){
+    func freeCoinsAdShow(_ view: UIViewController) -> Bool{
         if rewardedAd?.isReady == true {
             rewardedAd?.present(fromRootViewController: view, delegate:self)
         }
+       return rewardedAd?.isReady ?? false
     }
     
     /// Tells the delegate that the user earned a reward.
     func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
         Persistence.shared.totalCoins! += Int(reward.amount)
         Persistence.shared.freeCoinsGotInt += 1
-//        print("Reward received with currency: \(reward.amount).")
-
+        delegate?.freeCoinsSuccess()
     }
+    
     /// Tells the delegate that the rewarded ad was presented.
     func rewardedAdDidPresent(_ rewardedAd: GADRewardedAd) {
         print("Rewarded ad presented.")
     }
+    
     /// Tells the delegate that the rewarded ad was dismissed.
     func rewardedAdDidDismiss(_ rewardedAd: GADRewardedAd) {
         adLoad()
@@ -68,8 +75,8 @@ class FreeCoinsRewardClass: NSObject, GADRewardedAdDelegate, GADInterstitialDele
     
     
     func interstitialAdLoad(){
-        interstitial = GADInterstitial(adUnitID: interstitialAd)
-//         interstitial = GADInterstitial(adUnitID: testInterstitialAd)
+//        interstitial = GADInterstitial(adUnitID: interstitialAd)
+         interstitial = GADInterstitial(adUnitID: testInterstitialAd)
         let request = GADRequest()
         interstitial.load(request)
         print ("ad loaded")
@@ -100,7 +107,6 @@ class FreeCoinsRewardClass: NSObject, GADRewardedAdDelegate, GADInterstitialDele
 
     /// Tells the delegate the interstitial is to be animated off the screen.
     func interstitialWillDismissScreen(_ ad: GADInterstitial) {
-      
         print("interstitialWillDismissScreen")
     }
 

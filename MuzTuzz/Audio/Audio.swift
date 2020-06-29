@@ -8,6 +8,8 @@
 
 import Foundation
 import AVFoundation
+import AudioToolbox
+
 
 class SoundsPlay{
     static let shared = SoundsPlay()
@@ -59,6 +61,10 @@ class SoundsPlay{
     func startBackgroundMusic() {
         guard let audioPlayer = audioPlayer else { return }
         audioPlayer.play()
+    }
+    
+    func vibrateNotify(){
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
 }

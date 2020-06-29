@@ -98,7 +98,6 @@ class ViewController: UIViewController, MessageViewDelegate {
         if useHelp{
             Persistence.shared.totalSaved = false
             SaveLoadRealm().deleteRealm()
-            Persistence.shared.totalCoins = 0
             Persistence.shared.totalStars = 0
             topBarVC.coinsStarsUpdate()
             SoundsPlay.shared.playSound("ResetAll", "wav")

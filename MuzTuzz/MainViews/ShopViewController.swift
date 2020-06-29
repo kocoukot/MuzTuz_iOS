@@ -65,9 +65,6 @@ class ShopViewController: UIViewController  {
         case 3: keyword = "com.kocoukot.MuzTuz.EightDollarCoin"
         default: keyword = ""
         }
-        
-        // Check if there is a product fetched from App Store containing
-        // the keyword matching to the selected item's index.
         guard let product = getProduct(containing: keyword) else { return nil }
         return product
     }

@@ -15,7 +15,7 @@ class PremiaCell: UITableViewCell, MessageViewDelegate {
     
     @IBOutlet weak var premiaButtonOutlet: UIButton!
     var blur: UIVisualEffectView? = nil
-    let percentage = 80.0
+    let percentage = 10.0
     
     override func awakeFromNib() {
         super.awakeFromNib()
