@@ -55,5 +55,9 @@ class Level{
         self.premiaID = premiaID
     }
     
+    deinit {
+        
+    }
+    
 
 }

@@ -71,6 +71,7 @@ class RealmLevelInfo: Object{
     @objc dynamic var firstHelp = false
     @objc dynamic var secondHelp = false
     @objc dynamic var thirdHelp = false
+    @objc dynamic var fourthHelp = false
     @objc dynamic var timeSpendToSolve = 0.0
     
 }
@@ -100,6 +101,8 @@ class SaveLoadRealm{
                 level.firstHelp = LevelsInfo().helpsUsed[p][l][0]
                 level.secondHelp = LevelsInfo().helpsUsed[p][l][1]
                 level.thirdHelp = LevelsInfo().helpsUsed[p][l][2]
+                level.fourthHelp = LevelsInfo().helpsUsed[p][l][3] ?? false
+
                 level.timeSpendToSolve = 0.0
                 premia.premiaLevels.append(level)
             }
@@ -147,6 +150,8 @@ class SaveLoadRealm{
             data[premia].premiaLevels[lvl].firstHelp = helpsUsed[0]
             data[premia].premiaLevels[lvl].secondHelp = helpsUsed[1]
             data[premia].premiaLevels[lvl].thirdHelp = helpsUsed[2]
+            data[premia].premiaLevels[lvl].fourthHelp = helpsUsed[3]
+
             data[premia].premiaLevels[lvl].choosenLetter = choosenLetter
             data[premia].premiaLevels[lvl].timeSpendToSolve += timeSpend
             try! realm.commitWrite()
@@ -160,6 +165,8 @@ class SaveLoadRealm{
             helps.append(data[premia].premiaLevels[lvl].firstHelp)
             helps.append(data[premia].premiaLevels[lvl].secondHelp)
             helps.append(data[premia].premiaLevels[lvl].thirdHelp)
+            helps.append(data[premia].premiaLevels[lvl].fourthHelp)
+
         }
         return helps
     }
@@ -229,6 +236,9 @@ class SaveLoadRealm{
                             helpsUsed += 1
                         }
                         if data[p].premiaLevels[l].thirdHelp{
+                            helpsUsed += 1
+                        }
+                        if data[p].premiaLevels[l].fourthHelp{
                             helpsUsed += 1
                         }
                     } else {

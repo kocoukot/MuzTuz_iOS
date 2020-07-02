@@ -8,30 +8,29 @@
 
 import UIKit
 
-
-
-protocol LevelChooseDelegate {
+protocol LevelChooseDelegate: NSObjectProtocol {
     func levelNumber(_ number: PremiaCollectionViewCell)
 }
 
 
 class PremiaCollectionViewCell: UICollectionViewCell {
-    var delegate: LevelChooseDelegate?
-    @IBOutlet weak var solvedImage: UIImageView!
+    weak var delegate: LevelChooseDelegate?
     
+    @IBOutlet weak var solvedImage: UIImageView!
+    @IBOutlet weak var levelButton: UIButton!
+
     override func awakeFromNib() {
           super.awakeFromNib()
         levelButton.contentMode = .scaleAspectFit
         levelButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
       }
 
-
-    @IBOutlet weak var levelButton: UIButton!
-    
-    
     @IBAction func LevelChoose(_ sender: Any) {
         SoundsPlay.shared.playSound("common", "wav")
-
         delegate?.levelNumber(self)
+    }
+    
+    deinit {
+        self.removeFromSuperview()
     }
 }

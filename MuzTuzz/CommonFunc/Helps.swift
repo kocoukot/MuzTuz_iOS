@@ -7,7 +7,7 @@ class LevelHelps{
     private var buttonTapped: UIButton!
     
     let lettersView = LettersHelpView.loadFromNIB()
-    let prices = [-150,-250,-350]
+    let prices = [0, -150,-250,-350, -500]
     var selectedLetter = 0
     var correctAnswer = ""
     

@@ -8,13 +8,14 @@
 
 import UIKit
 
-protocol PremiaVCDelegate {
+
+protocol PremiaVCDelegate: NSObjectProtocol {
     func premiaInfoUpdate()
 }
 
 
 class PremiaVC: UIViewController, LevelChooseDelegate   {
-    var delegate: PremiaVCDelegate?
+    weak var delegate: PremiaVCDelegate?
     
     
     @IBOutlet weak var topBarView: UIView!
@@ -41,6 +42,10 @@ class PremiaVC: UIViewController, LevelChooseDelegate   {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
+          self.view = nil
+        self.removeFromParent()
+        self.collection = nil
+        
         delegate?.premiaInfoUpdate()
         topBarVC.removeFromSuperview()
     }
@@ -52,6 +57,10 @@ class PremiaVC: UIViewController, LevelChooseDelegate   {
                 vc.delegate = self
             }
         }
+    }
+    
+    deinit {
+        self.dismiss(animated: true)
     }
 }
 
@@ -80,13 +89,15 @@ extension PremiaVC: LevelEndDelegate{
         topBarVC.iconsUpdate()
         topBarVC.coinsAmountLabel.text = "\(Persistence.shared.totalCoins!)"
         topBarVC.starsAmountLabel.text = "\(Persistence.shared.totalStars!)"
-
         collection.reloadData()
     }
 }
 
 extension PremiaVC: TopBarDelegate{
     func closeVC() {
-        dismiss(animated: true)
+        self.dismiss(animated:true, completion: {
+            self.view = nil
+            self.collection.removeFromSuperview()
+        })
     }
 }

@@ -7,22 +7,24 @@
 //
 
 import UIKit
-protocol TutorialEndDelegate {
+protocol TutorialEndDelegate: NSObjectProtocol {
     func tutorialEndUpdate(_ lvlSolved: Bool)
 }
 
 class TutorialViewController: UIViewController, UITextFieldDelegate {
-    var delegate: TutorialEndDelegate?
+    weak var delegate: TutorialEndDelegate?
     
+    @IBOutlet weak var answerButton: UIButton!
+
     @IBOutlet weak var lettersAmountHelpButton: UIButton!
     @IBOutlet weak var oneLetterHelpButton: UIButton!
     @IBOutlet weak var songHelpButton: UIButton!
-    @IBOutlet weak var answerButton: UIButton!
+    @IBOutlet weak var answerHelpButton: UIButton!
+    
     
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var songHelpLabel: UILabel!
     @IBOutlet weak var lettersLabel: UILabel!
-    @IBOutlet weak var blur: UIVisualEffectView!
     
     @IBOutlet weak var firstArrowImage: UIImageView!
     @IBOutlet weak var rightArrowImage: UIImageView!
@@ -43,7 +45,7 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
     var selectedLetter = -1
     let animDuration = 0.3
     var levelSolved = false
-     var helpListBool = [false, false, false]
+     var helpListBool = [false, false, false,false]
     var exitMessage = false
     var helpNum = 0
     var messageNum = 0
@@ -58,9 +60,10 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
                         "Лицо оператора багровеет, глаза стекленеют от гнева. Время идёт, но это не помогает. К счастью, вы различаете одну из букв! Смело берите подсказку «Открыть букву»!",
                         "«Шанс - он не получка, не аванс», - как поется в одной известной пиратской песне. Но вот штрафа или выговора еще можно избежать, и вы обращаетесь к залу с просьбой назвать любимую песню у этого исполнителя. \nСмело берите подсказку «Название песни и альбома»!",
                         "Oтвет вводите в эту строчку. Достаточно имени и фамилии, только фамилии/псевдонима, названия группы. Написали? Нажимайте на галочку. Но помните, некоторые творцы очень трепетно относятся к своим именам.",
+                        "Если возникли трудности с отгадываем персонажа или группы, можете воспользоваться последней подсказкой и открыть весь уровень. Правда в дальнейшем стоить это будет немало!",
                         "Поздравляем с окончанием обучения! Можете приступать к основным уровням!"]
     
-    private let helpsName = ["Количество букв", "Показать выбранную букву", "Показать название песни и альбома","К сожалению для подсказки недостаточно монет!"]
+    private let helpsName = ["Количество букв", "Показать выбранную букву", "Показать название песни и альбома","Показать ответ"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,12 +83,11 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
         topBarView.addSubview(topBarVC)
         songHelpLabel.text = (levelInfo?.albom)!
         
-        messageView.showMessage(blur, messagesList[messageNum], view, okButton: true, messageView)
+        messageView.showMessage(nil, messagesList[messageNum], view, okButton: true, messageView)
         
         
         var i = 0
         var r = 0
-        blur.alpha = 0.9
         _  = Timer.scheduledTimer(withTimeInterval: 0.15, repeats: true) { (t) in
             self.firstArrowImage.image = UIImage(named: self.arrowList[i])
             self.rightArrowImage.image = UIImage(named: self.arrowListRight[r])
@@ -117,19 +119,9 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
                 levelSolved = true
                 answerTextField.isEnabled = false
                 animateViewMoving(up: false)
-                messageView.showMessage(blur, messagesList[messageNum], view, okButton: true, messageView)
+                messageView.showMessage(nil, messagesList[messageNum], view, okButton: true, messageView)
                  messageNum += 1
-                let colors = [UIColor(red: 1, green: 0, blue: 0, alpha: 0.1), UIColor(red: 0, green: 1, blue: 0, alpha: 0.1),UIColor(red: 0, green: 0, blue: 1, alpha: 0.1)]
-                var i = 0
-                blur.alpha = 0.9
-                _  = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true) { (t) in
-                    self.blur.backgroundColor = colors[i]
-                    if i + 1 > colors.count-1 {
-                        i = 0
-                    } else {
-                        i += 1
-                    }
-                }
+
             }
         }
         if !levelSolved{
@@ -152,6 +144,11 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
     // ------- Третья подсказка
     @IBAction func albomHelp(_ sender: Any) {
         showHelpMessageView(2)
+    }
+    
+    
+    @IBAction func answerHelp(_ sender: Any) {
+        showHelpMessageView(3)
     }
     
     func oneLetter(){
@@ -199,7 +196,6 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
         oneLetterHelpButton.isEnabled = false
         messageView.alpha = 0
         UIView.animate(withDuration: 0.6, delay: 0.2 ,animations: {
-            self.blur.alpha  = 0.9
             self.messageView.buttonsStackView.isHidden = true
             self.messageView.okButton.isHidden = false
             self.messageView.alpha = 1
@@ -212,7 +208,7 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
         helpNum = num
         firstArrowImage.isHidden = true
         SoundsPlay.shared.playSound("appearingView", "wav")
-        MessageView().showMessage(blur, "Вы уверены, что хотите использовать подсказку \"\(helpsName[num])?", view, okButton: false, messageView)
+        MessageView().showMessage(nil, "Вы уверены, что хотите использовать подсказку \"\(helpsName[num])?", view, okButton: false, messageView)
         messageView.noButton.isEnabled = false
     }
     
@@ -234,8 +230,7 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
         } else {
             UIView.animate(withDuration: 0.3, animations: {
                 self.bottomConstraint.constant = 0
-                self.stackViewAspectRatioConstr.constant = 0
-                self.stackViewHelps.spacing = 45
+
             })
         }
         self.view.layoutIfNeeded()
@@ -247,8 +242,7 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
             self.keyboardHeight = keyboardRectangle.height
             UIView.animate(withDuration: 0.6, animations: {
                 self.bottomConstraint.constant = self.keyboardHeight
-                self.stackViewAspectRatioConstr.constant = 100
-                self.stackViewHelps.spacing = 80
+
             })
         }
     }
@@ -271,11 +265,11 @@ extension TutorialViewController: MessageViewDelegate{
             // обработка подсказок
             switch helpNum {
             case 1:                             //подсказка выбор одной буквы
-                messageView.removeMessageView(blur,false)
+                messageView.removeMessageView(nil,false)
                 oneLetter()
             case 2:                             //подсказка альбом
                 SoundsPlay.shared.playSound("spendMoney", "wav")
-                messageView.removeMessageView(blur)
+                messageView.removeMessageView()
                 songHelpLabel.isHidden = false
                 songHelpButton.isEnabled = false
                 rightArrowImage.isHidden = true
@@ -292,43 +286,65 @@ extension TutorialViewController: MessageViewDelegate{
                     self.firstArrowImage.isHidden = false
                     self.rightArrowImage.isHidden = false
                 })
+            case 3:
+                SoundsPlay.shared.playSound("answerHelp", "wav")
+                messageView.removeMessageView()
+                lettersLabel.text = "МУМИЙ ТРОЛЛЬ"
+                lettersLabel.isHidden = false
+                songHelpLabel.isHidden = false
+                answerTextField.isEnabled = false
+                answerButton.isEnabled = false
+                answerHelpButton.isEnabled = false
                 
             default:                        //подсказка количество букв
                 SoundsPlay.shared.playSound("spendMoney", "wav")
-                messageView.removeMessageView(blur)
+                messageView.removeMessageView()
                 lettersLabel.text = "_ _ _ _ _   _ _ _ _ _ _"
                 lettersLabel.isHidden = false
                 lettersAmountHelpButton.isEnabled = false
                 messageNum += 1
-                messageView.showMessage(blur, messagesList[messageNum], view, okButton: true, messageView) // Не все потеряно юзай перdую подсказку
+                messageView.showMessage(nil, messagesList[messageNum], view, okButton: true, messageView) // Не все потеряно юзай перdую подсказку
             }
             
-        } else {
+        }
+        // информ сообщения
+        else {
             if !exitMessage{
                 infoMessages()
             } else {
                 
                 // обработка последних информ сообщенй и включение подсказок
-                messageView.removeMessageView(blur)
+                messageView.removeMessageView()
                 switch messageNum {
                 case 2:
                     firstArrowImage.frame = CGRect(x: stackViewHelps.frame.origin.x + lettersAmountHelpButton.frame.width/2 - 25 , y: stackViewHelps.frame.origin.y - 100, width: 100, height: 90)
                     firstArrowImage.isHidden = false
                     lettersAmountHelpButton.isEnabled = true
                 case 3:
-                    firstArrowImage.frame = CGRect(x: UIScreen.main.bounds.width / 2 - 25 , y: stackViewHelps.frame.origin.y - 90, width: 100, height: 90)
+
+                    firstArrowImage.frame = CGRect(x:oneLetterHelpButton.frame.origin.x + oneLetterHelpButton.frame.width / 4   , y: stackViewHelps.frame.origin.y - 90, width: 100, height: 90)
                     firstArrowImage.isHidden = false
                     oneLetterHelpButton.isEnabled = true
                     
                 case 4:
-                    rightArrowImage.frame = CGRect(x: UIScreen.main.bounds.width - self.lettersAmountHelpButton.frame.width / 2 - 50 - 35, y: stackViewHelps.frame.origin.y - 90, width: 100, height: 90)
+                    rightArrowImage.frame = CGRect(x: songHelpButton.frame.origin.x - songHelpButton.frame.width / 2, y: stackViewHelps.frame.origin.y - 90, width: 100, height: 90)
                     rightArrowImage.isHidden = false
                     songHelpButton.isEnabled = true
+                    
                 case 6:
+                    firstArrowImage.isHidden = true
+                    changeMessage()
+                    rightArrowImage.frame = CGRect(x: answerHelpButton.frame.origin.x - answerHelpButton.frame.width / 2, y: stackViewHelps.frame.origin.y - 90, width: 100, height: 90)
+                    rightArrowImage.isHidden = false
+                    exitMessage = true
+                    messageNum += 1
+                    
+                case 7:
                     firstArrowImage.isHidden = true
                     rightArrowImage.isHidden = true
                     answerButton.isEnabled = true
                     answerTextField.isEnabled = true
+                    answerHelpButton.isEnabled = true
 
                     
                 default:
@@ -368,8 +384,9 @@ extension TutorialViewController: MessageViewDelegate{
             messageNum += 1
             changeMessage()
             exitMessage = true
+            
         default:
-            messageView.removeMessageView(blur)
+            messageView.removeMessageView()
         }
     }
 }

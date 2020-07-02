@@ -104,5 +104,9 @@ class TopBar: UIView {
         let nib = UINib(nibName: "TopBar", bundle: nil)
         return nib.instantiate(withOwner: self, options: nil).first as! TopBar
     }
+    
+    deinit {
+        self.removeFromSuperview()
+    }
 }
 

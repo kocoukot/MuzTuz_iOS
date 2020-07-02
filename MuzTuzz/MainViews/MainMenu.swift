@@ -13,9 +13,6 @@ class ViewController: UIViewController, MessageViewDelegate {
     let topBarVC = TopBar.loadFromNIB()
     let messageView = MessageView.loadFromNIB()
     
-    
-    
-    
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var statisticButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
@@ -24,16 +21,19 @@ class ViewController: UIViewController, MessageViewDelegate {
     
     @IBOutlet weak var topBarView: UIView!
     @IBOutlet weak var blur: UIVisualEffectView!
-    
-    
+
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         let buttonsList = [playButton, statisticButton,resetButton,creatirsButton,shopButton  ]
         for b in buttonsList{
             CommonFuncs().shadowSet(b!)
         }
+        
+//        ProductsLib.productClass.loadShop()
+        
         
         topBarVC.delegate = self
         messageView.delegate = self
@@ -54,25 +54,22 @@ class ViewController: UIViewController, MessageViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? PremiaSelectVC, segue.identifier == "premiaList"{
             vc.delegate = self
-        } else if let vc = segue.destination as? ShopViewController, segue.identifier == "shopSegueID"{
+        } else if let vc = segue.destination as? TestVC, segue.identifier == "shopSegueID"{
             vc.delegate = self
         }
-        
     }
     
     
     @IBAction func playButtonClick(_ sender: Any) {
         SoundsPlay.shared.playSound("swipe2", "wav")
-        
     }
+    
     @IBAction func statisticButton(_ sender: Any) {
         SoundsPlay.shared.playSound("common", "wav")
-        
     }
     
     @IBAction func shopButton(_ sender: Any) {
         SoundsPlay.shared.playSound("common", "wav")
-        
     }
     
     @IBAction func resetButton(_ sender: Any) {
@@ -84,11 +81,9 @@ class ViewController: UIViewController, MessageViewDelegate {
         SoundsPlay.shared.playSound("common", "wav")
     }
     
-    
     @IBAction func removeShadow(_ sender: Any) {
         (sender as AnyObject).layer.shadowOffset = CGSize(width: 0, height: 0)
     }
-    
     
     @IBAction func returnShadow(_ sender: Any) {
         (sender as AnyObject).layer.shadowOffset = CGSize(width: 2.5, height: 2.5)
@@ -112,33 +107,21 @@ class ViewController: UIViewController, MessageViewDelegate {
         CommonFuncs().openURL("https://vk.com/kocou_kot")
     }
     
-    @IBAction func fbButton(_ sender: Any) {
-        SoundsPlay.shared.playSound("common", "wav")
-        CommonFuncs().openURL("https://www.facebook.com/shimpaks")
-    }
-    
-    @IBAction func twitButton(_ sender: Any) {
-        SoundsPlay.shared.playSound("common", "wav")
-        CommonFuncs().openURL("https://twitter.com/gugel_hunds")
-    }
+//    @IBAction func fbButton(_ sender: Any) {
+//        SoundsPlay.shared.playSound("common", "wav")
+//        CommonFuncs().openURL("https://www.facebook.com/shimpaks")
+//    }
+//    
+//    @IBAction func twitButton(_ sender: Any) {
+//        SoundsPlay.shared.playSound("common", "wav")
+//        CommonFuncs().openURL("https://twitter.com/gugel_hunds")
+//    }
     
     @IBAction func instaButton(_ sender: Any) {
         SoundsPlay.shared.playSound("common", "wav")
         CommonFuncs().openURL("https://www.instagram.com/alexzhegulov/")
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
-
 
 
 extension ViewController: PremiaSelectVCDelegate, ShopDelegate{

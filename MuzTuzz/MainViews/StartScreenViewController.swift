@@ -1,10 +1,3 @@
-//
-//  StartScreenViewController.swift
-//  MuzTuzz
-//
-//  Created by Anton on 19.06.2020.
-//  Copyright © 2020 Anton. All rights reserved.
-//
 
 import UIKit
 
@@ -13,7 +6,6 @@ class StartScreenViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var fireImage: UIImageView!
-    @IBOutlet weak var blur: UIVisualEffectView!
     
     let screenWidth = UIScreen.main.bounds.width
     var imageHeight:CGFloat = 0.0
@@ -25,7 +17,6 @@ class StartScreenViewController: UIViewController {
         startButton.frame = CGRect(x:  10, y: UIScreen.main.bounds.height, width:  UIScreen.main.bounds.width-20, height:  screenWidth * 1.02)
         self.view.layoutIfNeeded()
         SoundsPlay.shared.prepareBackgroundMusic()
-        
         if !Persistence.shared.first{
             SoundsPlay.shared.startBackgroundMusic()
             Persistence.shared.music = true
@@ -33,8 +24,6 @@ class StartScreenViewController: UIViewController {
         } else if Persistence.shared.music{
             SoundsPlay.shared.startBackgroundMusic()
         }
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

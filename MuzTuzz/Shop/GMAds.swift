@@ -17,12 +17,14 @@ protocol FreeCoinsDelegate: NSObject {
 class FreeCoinsRewardClass: NSObject, GADRewardedAdDelegate, GADInterstitialDelegate{
     weak var delegate:FreeCoinsDelegate?
     
-    let adID = "ca-app-pub-8364051315582457/6579562744"
-    let testAdID = "ca-app-pub-3940256099942544/1712485313"
+    //test
+//    let adID = "ca-app-pub-3940256099942544/1712485313"
+//    let interstitialAd = "ca-app-pub-3940256099942544/4411468910"
     
-    let testInterstitialAd = "ca-app-pub-3940256099942544/4411468910"
+    //no test
     let interstitialAd = "ca-app-pub-8364051315582457/9039873428"
-    
+    let adID = "ca-app-pub-8364051315582457/6579562744"
+
     
     static let freeAdd = FreeCoinsRewardClass()
     
@@ -30,8 +32,7 @@ class FreeCoinsRewardClass: NSObject, GADRewardedAdDelegate, GADInterstitialDele
     var interstitial: GADInterstitial!
     
     func adLoad(){
-        rewardedAd = GADRewardedAd(adUnitID: testAdID)
-//        rewardedAd = GADRewardedAd(adUnitID: adID)
+        rewardedAd = GADRewardedAd(adUnitID: adID)
         
         rewardedAd?.load(GADRequest()) { error in
             if let error = error {
@@ -75,8 +76,7 @@ class FreeCoinsRewardClass: NSObject, GADRewardedAdDelegate, GADInterstitialDele
     
     
     func interstitialAdLoad(){
-//        interstitial = GADInterstitial(adUnitID: interstitialAd)
-         interstitial = GADInterstitial(adUnitID: testInterstitialAd)
+        interstitial = GADInterstitial(adUnitID: interstitialAd)
         let request = GADRequest()
         interstitial.load(request)
         print ("ad loaded")

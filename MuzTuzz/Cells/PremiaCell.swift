@@ -2,26 +2,25 @@
 
 import UIKit
 
-protocol PremiaChooseDelegate {
+protocol PremiaChooseDelegate: NSObjectProtocol {
     func premiaNumber(_ number: PremiaCell)
 }
 
 
 class PremiaCell: UITableViewCell, MessageViewDelegate {
     
-    var delegate: PremiaChooseDelegate?
+    weak var delegate: PremiaChooseDelegate?
     
     let messageView = MessageView.loadFromNIB()
     
     @IBOutlet weak var premiaButtonOutlet: UIButton!
-    var blur: UIVisualEffectView? = nil
-    let percentage = 10.0
+    weak var blur: UIVisualEffectView? = nil
+    let percentage = 80.0
     
     override func awakeFromNib() {
         super.awakeFromNib()
         messageView.alpha = 0
         messageView.delegate = self
-        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -30,9 +29,7 @@ class PremiaCell: UITableViewCell, MessageViewDelegate {
     
     @IBAction func onPremiaChoose(_ sender: Any) {
         SoundsPlay.shared.playSound("common", "wav")
-
         delegate?.premiaNumber(self)
-        
     }
     
     func premiaStatusSet(_ index: Int,_ blur: UIVisualEffectView,_ view: UIView){
@@ -52,15 +49,12 @@ class PremiaCell: UITableViewCell, MessageViewDelegate {
                 premiaButtonOutlet.isUserInteractionEnabled = false
             }
         } else {
-            
             premiaButtonOutlet.setImage(UIImage(named: LevelsInfo().premiaDisksList[index][SaveLoadRealm().getPremiaLevelsInfo(index).filter{solved in solved == true}.count]), for: .normal)
             premiaButtonOutlet.isUserInteractionEnabled = true
-            
         }
     }
     
     private func openLvl(_ index: Int) -> Bool{
-        
         if Double(SaveLoadRealm().getPremiaLevelsInfo(index-1).filter{solved in solved == true}.count) / Double(SaveLoadRealm().getPremiaLevelsInfo(index-1).count)*100 >= percentage{
             return true
         } else {
@@ -71,11 +65,6 @@ class PremiaCell: UITableViewCell, MessageViewDelegate {
     
     func qestionAnswered(_ useHelp: Bool) {
         messageView.removeMessageView(self.blur!)
-//        UIView.animate(withDuration: 0.6, animations: {
-//            self.blur?.alpha = 0
-//            self.messageView.alpha = 0
-//        })
-        
     }
     
 }

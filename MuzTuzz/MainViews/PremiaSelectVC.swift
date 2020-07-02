@@ -2,12 +2,12 @@
 
 import UIKit
 
-protocol PremiaSelectVCDelegate {
+protocol PremiaSelectVCDelegate: NSObjectProtocol {
     func topBarIconsUpdate()
 }
 
 class PremiaSelectVC: UIViewController, PremiaChooseDelegate {
-    var delegate: PremiaSelectVCDelegate?
+    weak var delegate: PremiaSelectVCDelegate?
     
     @IBOutlet weak var premiaTable: UITableView!
     @IBOutlet weak var topBarView: UIView!
@@ -18,10 +18,6 @@ class PremiaSelectVC: UIViewController, PremiaChooseDelegate {
     
     let topBarVC = TopBar.loadFromNIB()
     let messageView = MessageView.loadFromNIB()
-
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,21 +27,17 @@ class PremiaSelectVC: UIViewController, PremiaChooseDelegate {
         messageView.delegate = self
         topBarView.addSubview(topBarVC)
         FreeCoinsRewardClass.freeAdd.interstitialAdLoad()
-
-       
         
         if !Persistence.shared.totalSaved{
             SaveLoadRealm().saveRealmData()
         }
         
         if !Persistence.shared.first{
-            
             messageView.showMessage(nil, "Похоже это твой первый визит в игру МузТус! Рекомендуем сперва пройти небольшое обучение, чтобы разобраться что к чему. К тому же, если пройдешь обучение, получишь небольшой приятный стартовый бонус.", view, okButton: true, messageView)
             Persistence.shared.first = true
         }
         
     }
-    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
@@ -55,9 +47,6 @@ class PremiaSelectVC: UIViewController, PremiaChooseDelegate {
     func premiaNumber(_ number: PremiaCell) {
         selectedLevel = self.premiaTable.indexPath(for: number)!.row 
     }
-    
-
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? PremiaVC, segue.identifier == "premiaChooseID"{
@@ -69,12 +58,6 @@ class PremiaSelectVC: UIViewController, PremiaChooseDelegate {
                 vc.levelInfo = level
             }
         }
-    }
-}
-
-extension PremiaSelectVC: TopBarDelegate{
-    func closeVC() {
-        dismiss(animated: true)
     }
 }
 
@@ -90,7 +73,6 @@ extension PremiaSelectVC: UITableViewDataSource{
         } else {
             cellID = "premiaCell"
         }
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as! PremiaCell
         cell.delegate = self
         cell.premiaStatusSet(indexPath.row, blurEfect, view)
@@ -98,6 +80,12 @@ extension PremiaSelectVC: UITableViewDataSource{
             cell.premiaButtonOutlet.isUserInteractionEnabled = false
         }
         return cell
+    }
+}
+
+extension PremiaSelectVC: TopBarDelegate{
+    func closeVC() {
+        dismiss(animated: true)
     }
 }
 
@@ -113,15 +101,13 @@ extension PremiaSelectVC: PremiaVCDelegate, TutorialEndDelegate, MessageViewDele
             LevelHelps().coinsChange(200, topBarVC.coinsAmountLabel)
         }
         topBarVC.iconsUpdate()
-        
     }
     
     func premiaInfoUpdate() {
         topBarVC.iconsUpdate()
         topBarVC.coinsStarsUpdate()
         premiaTable.reloadData()
-        
-        _  = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (t) in
+        _  = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { (t) in
             FreeCoinsRewardClass.freeAdd.interstitialAdShow(self)
             FreeCoinsRewardClass.freeAdd.interstitialAdLoad()
             t.invalidate()

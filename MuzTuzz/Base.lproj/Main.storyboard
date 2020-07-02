@@ -174,11 +174,14 @@
                                     <constraint firstAttribute="width" secondItem="rRE-Ti-Na1" secondAttribute="height" multiplier="15:8" id="RMk-6c-3sR"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ffV-6N-yKu">
-                                <rect key="frame" x="90" y="772" width="294" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="ffV-6N-yKu">
+                                <rect key="frame" x="140" y="759" width="204" height="73"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0L6-gV-3Cb">
-                                        <rect key="frame" x="0.0" y="0.0" width="66" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="73" height="73"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="0L6-gV-3Cb" secondAttribute="height" multiplier="1:1" id="8q3-sy-DiC"/>
+                                        </constraints>
                                         <state key="normal" image="vk"/>
                                         <state key="selected" image="vk_tap"/>
                                         <state key="highlighted" image="vk_tap"/>
@@ -186,26 +189,8 @@
                                             <action selector="vkButton:" destination="UhW-SL-9hJ" eventType="touchUpInside" id="0Zb-sV-pch"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qm-eC-eym">
-                                        <rect key="frame" x="76" y="0.0" width="66" height="60"/>
-                                        <state key="normal" image="fb"/>
-                                        <state key="selected" image="fb_tap"/>
-                                        <state key="highlighted" image="fb_tap"/>
-                                        <connections>
-                                            <action selector="fbButton:" destination="UhW-SL-9hJ" eventType="touchUpInside" id="IXC-V4-TLx"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQj-1E-vPa">
-                                        <rect key="frame" x="152" y="0.0" width="66" height="60"/>
-                                        <state key="normal" image="tvitter"/>
-                                        <state key="selected" image="tvitter_tap"/>
-                                        <state key="highlighted" image="tvitter_tap"/>
-                                        <connections>
-                                            <action selector="twitButton:" destination="UhW-SL-9hJ" eventType="touchUpInside" id="jA3-uc-7yr"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZA0-Nw-Cf7">
-                                        <rect key="frame" x="228" y="0.0" width="66" height="60"/>
+                                        <rect key="frame" x="131" y="0.0" width="73" height="73"/>
                                         <state key="normal" image="instagram"/>
                                         <state key="selected" image="instagram_tap"/>
                                         <state key="highlighted" image="instagram_tap"/>
@@ -227,9 +212,8 @@
                         <color key="backgroundColor" red="0.36537444590000001" green="0.55835592749999996" blue="0.45096778869999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="kDv-Eh-ECf" firstAttribute="centerX" secondItem="SQa-98-Bjo" secondAttribute="centerX" id="00M-QB-pR6"/>
-                            <constraint firstItem="ffV-6N-yKu" firstAttribute="leading" secondItem="ueP-ca-vVt" secondAttribute="leading" constant="90" id="0jY-ba-TEY"/>
+                            <constraint firstItem="ffV-6N-yKu" firstAttribute="leading" secondItem="ueP-ca-vVt" secondAttribute="leading" constant="140" id="0jY-ba-TEY"/>
                             <constraint firstItem="5Y2-iQ-6eZ" firstAttribute="centerX" secondItem="SQa-98-Bjo" secondAttribute="centerX" id="7du-11-iDm"/>
-                            <constraint firstItem="ffV-6N-yKu" firstAttribute="height" secondItem="rRE-Ti-Na1" secondAttribute="height" multiplier="0.3" id="8d4-b5-AqK"/>
                             <constraint firstItem="ueP-ca-vVt" firstAttribute="trailing" secondItem="rRE-Ti-Na1" secondAttribute="trailing" constant="20" id="8jk-ij-en0"/>
                             <constraint firstItem="kDv-Eh-ECf" firstAttribute="top" secondItem="ueP-ca-vVt" secondAttribute="top" id="ADX-Uj-w8Y"/>
                             <constraint firstItem="89w-Ba-vUy" firstAttribute="centerX" secondItem="SQa-98-Bjo" secondAttribute="centerX" id="BAB-0U-SnO"/>
@@ -245,7 +229,7 @@
                             <constraint firstAttribute="trailing" secondItem="89w-Ba-vUy" secondAttribute="trailing" constant="50" id="eWY-h3-B3j"/>
                             <constraint firstItem="5Y2-iQ-6eZ" firstAttribute="leading" secondItem="SQa-98-Bjo" secondAttribute="leading" id="g6h-9i-gyq"/>
                             <constraint firstItem="ueP-ca-vVt" firstAttribute="trailing" secondItem="5Y2-iQ-6eZ" secondAttribute="trailing" id="kYs-In-YmK"/>
-                            <constraint firstItem="ffV-6N-yKu" firstAttribute="trailing" secondItem="rRE-Ti-Na1" secondAttribute="trailing" constant="-10" id="rov-nY-jk9"/>
+                            <constraint firstItem="ffV-6N-yKu" firstAttribute="trailing" secondItem="rRE-Ti-Na1" secondAttribute="trailing" constant="-50" id="rov-nY-jk9"/>
                             <constraint firstItem="ffV-6N-yKu" firstAttribute="bottom" secondItem="rRE-Ti-Na1" secondAttribute="bottom" constant="-30" id="tLr-ds-Idp"/>
                             <constraint firstItem="ueP-ca-vVt" firstAttribute="bottom" secondItem="rRE-Ti-Na1" secondAttribute="bottom" id="vVP-A8-XO7"/>
                             <constraint firstItem="ub2-js-rFU" firstAttribute="top" secondItem="89w-Ba-vUy" secondAttribute="bottom" constant="20" id="xA7-SK-Lv1"/>
@@ -370,10 +354,10 @@
             </objects>
             <point key="canvasLocation" x="1628" y="133.74384236453201"/>
         </scene>
-        <!--Shop View Controller-->
+        <!--TestVC-->
         <scene sceneID="PWR-aL-oXL">
             <objects>
-                <viewController id="ILx-tX-wVN" customClass="ShopViewController" customModule="МузТус" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ILx-tX-wVN" customClass="TestVC" customModule="МузТус" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8k6-DQ-8fX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -438,9 +422,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDN-fA-KNE">
                                         <rect key="frame" x="47" y="360" width="280" height="70"/>
-                                        <state key="normal" image="magazin_999999m"/>
-                                        <state key="selected" image="magazin_999999m_tap"/>
-                                        <state key="highlighted" image="magazin_999999m_tap"/>
+                                        <state key="normal" image="magazin_beskonechno_m"/>
+                                        <state key="selected" image="magazin_beskonechno_m_tap"/>
+                                        <state key="highlighted" image="magazin_beskonechno_m_tap"/>
                                         <connections>
                                             <action selector="fourthBuyCoin:" destination="ILx-tX-wVN" eventType="touchUpInside" id="c2X-JH-W8r"/>
                                             <action selector="removeShadow:" destination="ILx-tX-wVN" eventType="touchDown" id="S2v-Ob-aqO"/>
@@ -844,11 +828,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="Jjl-tO-DbD">
-                                <rect key="frame" x="10" y="709.66666666666663" width="394" height="98.333333333333371"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Jjl-tO-DbD">
+                                <rect key="frame" x="10" y="731.33333333333337" width="394" height="76.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9E-LR-IgM">
-                                        <rect key="frame" x="0.0" y="0.0" width="101.33333333333333" height="98.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="76.666666666666671"/>
                                         <state key="normal" image="podskazka_kolichestvo_bukv"/>
                                         <state key="disabled" image="podskazka_kolichestvo_bukv_zakrita"/>
                                         <connections>
@@ -856,7 +840,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSa-Sk-Ijm">
-                                        <rect key="frame" x="146.33333333333334" y="0.0" width="101.33333333333334" height="98.333333333333329"/>
+                                        <rect key="frame" x="104.66666666666669" y="0.0" width="80" height="76.666666666666671"/>
                                         <state key="normal" image="podskazka_lubay_bukva"/>
                                         <state key="disabled" image="podskazka_lubay_bukva_zakrita"/>
                                         <connections>
@@ -864,20 +848,28 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXl-eB-F9O">
-                                        <rect key="frame" x="292.66666666666669" y="0.0" width="101.33333333333331" height="98.333333333333329"/>
+                                        <rect key="frame" x="209.66666666666666" y="0.0" width="79.666666666666657" height="76.666666666666671"/>
                                         <state key="normal" image="podskazka_albom_pesny"/>
                                         <state key="disabled" image="podskazka_albom_pesny_zakrita"/>
                                         <connections>
                                             <action selector="albomHelp:" destination="gQD-mf-Aub" eventType="touchUpInside" id="Xha-Gw-R26"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIf-wm-MOG">
+                                        <rect key="frame" x="314.33333333333331" y="0.0" width="79.666666666666686" height="76.666666666666671"/>
+                                        <state key="normal" image="podskazka_podskazok"/>
+                                        <state key="disabled" image="podskazka_podskazok_zakrita"/>
+                                        <connections>
+                                            <action selector="answerHelp:" destination="gQD-mf-Aub" eventType="touchUpInside" id="ZBc-AA-IPB"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Jjl-tO-DbD" secondAttribute="height" multiplier="4:1" id="jun-f6-oln"/>
+                                    <constraint firstAttribute="width" secondItem="Jjl-tO-DbD" secondAttribute="height" multiplier="5.15:1" id="jun-f6-oln"/>
                                 </constraints>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите свой ответ..." adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="g2X-rF-2bj">
-                                <rect key="frame" x="10" y="665.66666666666663" width="334" height="34"/>
+                                <rect key="frame" x="10" y="687.33333333333337" width="334" height="34"/>
                                 <color key="backgroundColor" red="0.94804733990000001" green="0.89192187789999999" blue="0.78037571910000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -888,7 +880,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="artist_3_6_korolishut" translatesAutoresizingMaskIntoConstraints="NO" id="FyV-vx-Ac7">
-                                <rect key="frame" x="15" y="101" width="384" height="513.66666666666663"/>
+                                <rect key="frame" x="15" y="101" width="384" height="535.33333333333337"/>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJc-M8-dIE">
                                 <rect key="frame" x="10" y="60" width="63" height="36"/>
@@ -899,7 +891,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aoE-I2-oo7">
-                                <rect key="frame" x="10" y="624.66666666666663" width="394" height="36"/>
+                                <rect key="frame" x="10" y="646.33333333333337" width="394" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.94804733990000001" green="0.89192187789999999" blue="0.78037571910000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -925,7 +917,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5v6-ko-Zxt">
-                                <rect key="frame" x="359" y="659.66666666666663" width="45" height="40"/>
+                                <rect key="frame" x="359" y="681.33333333333337" width="45" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7Xu-cH-xOp"/>
                                     <constraint firstAttribute="width" constant="45" id="zcH-NF-ZVf"/>
@@ -986,6 +978,7 @@
                     <navigationItem key="navigationItem" id="OuX-ti-5nY"/>
                     <connections>
                         <outlet property="answerButton" destination="5v6-ko-Zxt" id="mht-E2-dc2"/>
+                        <outlet property="answerHelpButton" destination="lIf-wm-MOG" id="CZH-d5-kYJ"/>
                         <outlet property="answerTextField" destination="g2X-rF-2bj" id="zwB-Gv-rMf"/>
                         <outlet property="blur" destination="O7M-ng-vPn" id="j2S-U5-FtC"/>
                         <outlet property="bottomConstraint" destination="VNZ-ur-u4W" id="MCS-Zp-7fr"/>
@@ -1013,11 +1006,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="PzJ-95-N5k">
-                                <rect key="frame" x="10" y="709.66666666666663" width="394" height="98.333333333333371"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="PzJ-95-N5k">
+                                <rect key="frame" x="10" y="731.33333333333337" width="394" height="76.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s8Z-Po-ShC">
-                                        <rect key="frame" x="0.0" y="0.0" width="101.33333333333333" height="98.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="76.666666666666671"/>
                                         <state key="normal" image="podskazka_kolichestvo_bukv"/>
                                         <state key="disabled" image="podskazka_kolichestvo_bukv_zakrita"/>
                                         <connections>
@@ -1025,7 +1018,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="13O-Xm-pO7">
-                                        <rect key="frame" x="146.33333333333334" y="0.0" width="101.33333333333334" height="98.333333333333329"/>
+                                        <rect key="frame" x="104.66666666666669" y="0.0" width="80" height="76.666666666666671"/>
                                         <state key="normal" image="podskazka_lubay_bukva"/>
                                         <state key="disabled" image="podskazka_lubay_bukva_zakrita"/>
                                         <connections>
@@ -1033,23 +1026,32 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="exG-Ul-9f6">
-                                        <rect key="frame" x="292.66666666666669" y="0.0" width="101.33333333333331" height="98.333333333333329"/>
+                                        <rect key="frame" x="209.66666666666666" y="0.0" width="79.666666666666657" height="76.666666666666671"/>
                                         <state key="normal" image="podskazka_albom_pesny"/>
                                         <state key="disabled" image="podskazka_albom_pesny_zakrita"/>
                                         <connections>
                                             <action selector="albomHelp:" destination="yzp-jx-M4U" eventType="touchUpInside" id="GNa-V4-ibg"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGW-ni-a20">
+                                        <rect key="frame" x="314.33333333333331" y="0.0" width="79.666666666666686" height="76.666666666666671"/>
+                                        <state key="normal" image="podskazka_podskazok"/>
+                                        <state key="disabled" image="podskazka_podskazok_zakrita"/>
+                                        <connections>
+                                            <action selector="answerHelp:" destination="gQD-mf-Aub" eventType="touchUpInside" id="1wc-3f-zoa"/>
+                                            <action selector="answerHelp:" destination="yzp-jx-M4U" eventType="touchUpInside" id="Lne-s4-L5T"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="PzJ-95-N5k" secondAttribute="height" multiplier="4:1" id="Xze-al-PSO"/>
+                                    <constraint firstAttribute="width" secondItem="PzJ-95-N5k" secondAttribute="height" multiplier="5.15:1" id="Xze-al-PSO"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="FmY-9y-aaa" appends="YES" id="KN5-pe-gQb"/>
                                 </connections>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleAspectFit" enabled="NO" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите свой ответ..." adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="swz-jG-aSt">
-                                <rect key="frame" x="10" y="665.66666666666663" width="334" height="34"/>
+                                <rect key="frame" x="10" y="687.33333333333337" width="334" height="34"/>
                                 <color key="backgroundColor" red="0.94804733990000001" green="0.89192187789999999" blue="0.78037571910000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
@@ -1064,7 +1066,7 @@
                                 </connections>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="artist_0_1_mumitrol" translatesAutoresizingMaskIntoConstraints="NO" id="Q5s-BS-hvw">
-                                <rect key="frame" x="15" y="101" width="384" height="513.66666666666663"/>
+                                <rect key="frame" x="15" y="101" width="384" height="535.33333333333337"/>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hno-fp-IaS">
                                 <rect key="frame" x="10" y="60" width="63" height="36"/>
@@ -1075,7 +1077,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Q62-Cu-vin">
-                                <rect key="frame" x="10" y="624.66666666666663" width="394" height="36"/>
+                                <rect key="frame" x="10" y="646.33333333333337" width="394" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.94804733990000001" green="0.89192187789999999" blue="0.78037571910000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -1088,7 +1090,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFit" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0we-NM-1Jp">
-                                <rect key="frame" x="359" y="659.66666666666663" width="45" height="40"/>
+                                <rect key="frame" x="359" y="681.33333333333337" width="45" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="oFm-l7-U7U"/>
                                     <constraint firstAttribute="width" constant="45" id="oZj-AQ-uo1"/>
@@ -1101,14 +1103,6 @@
                                     <action selector="checkAnswerButton:" destination="yzp-jx-M4U" eventType="touchUpInside" id="fwu-gE-NdP"/>
                                 </connections>
                             </button>
-                            <visualEffectView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcB-ue-1jz">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Kmy-pE-DDw">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="systemUltraThinMaterialLight"/>
-                            </visualEffectView>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="strelka1_1_animaciya" translatesAutoresizingMaskIntoConstraints="NO" id="U1e-bb-lvM">
                                 <rect key="frame" x="250" y="470" width="100" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1126,9 +1120,7 @@
                             <constraint firstItem="Vmy-Eg-jpa" firstAttribute="trailing" secondItem="PzJ-95-N5k" secondAttribute="trailing" constant="10" id="9eH-EC-cPZ"/>
                             <constraint firstItem="Vmy-Eg-jpa" firstAttribute="bottom" secondItem="PzJ-95-N5k" secondAttribute="bottom" id="B4S-T2-gHV"/>
                             <constraint firstItem="Q62-Cu-vin" firstAttribute="top" secondItem="Q5s-BS-hvw" secondAttribute="bottom" constant="10" id="BBh-UW-O4U"/>
-                            <constraint firstItem="dcB-ue-1jz" firstAttribute="centerX" secondItem="hX0-Ay-O3V" secondAttribute="centerX" id="BbM-8e-Gyk"/>
                             <constraint firstItem="a8m-Q6-wf7" firstAttribute="top" secondItem="Vmy-Eg-jpa" secondAttribute="top" id="Fkx-D7-NmI"/>
-                            <constraint firstItem="dcB-ue-1jz" firstAttribute="trailing" secondItem="Vmy-Eg-jpa" secondAttribute="trailing" id="NYh-Fz-bQj"/>
                             <constraint firstItem="PzJ-95-N5k" firstAttribute="centerX" secondItem="hX0-Ay-O3V" secondAttribute="centerX" id="NZ4-sk-3k1"/>
                             <constraint firstItem="Q62-Cu-vin" firstAttribute="leading" secondItem="Vmy-Eg-jpa" secondAttribute="leading" constant="10" id="OJ6-XL-89s"/>
                             <constraint firstItem="Vmy-Eg-jpa" firstAttribute="trailing" secondItem="Q5s-BS-hvw" secondAttribute="trailing" constant="15" id="Ox6-b9-aZO"/>
@@ -1141,13 +1133,10 @@
                             <constraint firstItem="PzJ-95-N5k" firstAttribute="top" secondItem="swz-jG-aSt" secondAttribute="bottom" constant="10" id="aW4-Hi-sgy"/>
                             <constraint firstItem="a8m-Q6-wf7" firstAttribute="leading" secondItem="Vmy-Eg-jpa" secondAttribute="leading" id="e8S-76-cIy"/>
                             <constraint firstItem="Hno-fp-IaS" firstAttribute="leading" secondItem="Vmy-Eg-jpa" secondAttribute="leading" constant="10" id="ebt-MR-qhF"/>
-                            <constraint firstItem="Vmy-Eg-jpa" firstAttribute="bottom" secondItem="dcB-ue-1jz" secondAttribute="bottom" id="fJP-qv-UiL"/>
                             <constraint firstItem="Hno-fp-IaS" firstAttribute="top" secondItem="a8m-Q6-wf7" secondAttribute="bottom" id="gU8-Ep-jgl"/>
                             <constraint firstItem="PzJ-95-N5k" firstAttribute="top" secondItem="0we-NM-1Jp" secondAttribute="bottom" constant="10" id="kOR-Av-Pq1"/>
-                            <constraint firstItem="dcB-ue-1jz" firstAttribute="leading" secondItem="Vmy-Eg-jpa" secondAttribute="leading" id="qGD-Pw-pM3"/>
                             <constraint firstItem="Vmy-Eg-jpa" firstAttribute="trailing" secondItem="a8m-Q6-wf7" secondAttribute="trailing" id="swO-CV-TJg"/>
                             <constraint firstItem="Vmy-Eg-jpa" firstAttribute="trailing" secondItem="0we-NM-1Jp" secondAttribute="trailing" constant="10" id="v0r-Tw-8WI"/>
-                            <constraint firstItem="dcB-ue-1jz" firstAttribute="top" secondItem="Vmy-Eg-jpa" secondAttribute="top" id="ySA-BJ-rWb"/>
                             <constraint firstItem="Q62-Cu-vin" firstAttribute="centerX" secondItem="hX0-Ay-O3V" secondAttribute="centerX" id="zMy-kF-990"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vmy-Eg-jpa"/>
@@ -1155,8 +1144,8 @@
                     <navigationItem key="navigationItem" id="Z3O-ks-0Ha"/>
                     <connections>
                         <outlet property="answerButton" destination="0we-NM-1Jp" id="uaX-9q-zt0"/>
+                        <outlet property="answerHelpButton" destination="uGW-ni-a20" id="683-Gb-iOg"/>
                         <outlet property="answerTextField" destination="swz-jG-aSt" id="nt8-4v-HNR"/>
-                        <outlet property="blur" destination="dcB-ue-1jz" id="FyK-pr-tPz"/>
                         <outlet property="bottomConstraint" destination="B4S-T2-gHV" id="fka-DR-zpf"/>
                         <outlet property="firstArrowImage" destination="NKF-iQ-dxs" id="bK2-p1-So4"/>
                         <outlet property="lettersAmountHelpButton" destination="s8Z-Po-ShC" id="HcF-bs-Ke5"/>
@@ -1194,8 +1183,6 @@
         <image name="chelovechek_ochen_rady" width="1024" height="406"/>
         <image name="cozdateli" width="837" height="140"/>
         <image name="cozdateli_tap" width="837" height="140"/>
-        <image name="fb" width="174" height="176"/>
-        <image name="fb_tap" width="174" height="175"/>
         <image name="fire" width="693" height="380"/>
         <image name="igra" width="987" height="186"/>
         <image name="igra_tap" width="987" height="186"/>
@@ -1209,8 +1196,8 @@
         <image name="magazin_2999m_tap" width="888" height="240"/>
         <image name="magazin_5999m" width="888" height="240"/>
         <image name="magazin_5999m_tap" width="888" height="240"/>
-        <image name="magazin_999999m" width="888" height="240"/>
-        <image name="magazin_999999m_tap" width="888" height="240"/>
+        <image name="magazin_beskonechno_m" width="888" height="240"/>
+        <image name="magazin_beskonechno_m_tap" width="888" height="240"/>
         <image name="magazin_tap" width="837" height="140"/>
         <image name="muztus" width="1140" height="479"/>
         <image name="obychenie_0" width="557" height="559"/>
@@ -1220,6 +1207,8 @@
         <image name="podskazka_kolichestvo_bukv_zakrita" width="170" height="173"/>
         <image name="podskazka_lubay_bukva" width="170" height="172"/>
         <image name="podskazka_lubay_bukva_zakrita" width="170" height="173"/>
+        <image name="podskazka_podskazok" width="170" height="172"/>
+        <image name="podskazka_podskazok_zakrita" width="171" height="172"/>
         <image name="sbros" width="837" height="140"/>
         <image name="sbros_tap" width="837" height="140"/>
         <image name="solved" width="146" height="117"/>
@@ -1227,8 +1216,6 @@
         <image name="statistika_tap" width="837" height="140"/>
         <image name="strelka1_1_animaciya" width="210" height="285"/>
         <image name="strelka2_1_animaciya" width="211" height="285"/>
-        <image name="tvitter" width="174" height="176"/>
-        <image name="tvitter_tap" width="174" height="176"/>
         <image name="vk" width="175" height="176"/>
         <image name="vk_tap" width="174" height="175"/>
         <image name="vvod_galka" width="132" height="116"/>

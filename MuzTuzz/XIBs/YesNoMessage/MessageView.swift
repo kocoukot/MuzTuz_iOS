@@ -85,7 +85,7 @@ class MessageView: UIView {
         })
     }
     
-    func removeMessageView(_ blur:UIVisualEffectView? , _ removeBlur: Bool = true){
+    func removeMessageView(_ blur:UIVisualEffectView? = nil, _ removeBlur: Bool = true){
         UIView.animate(withDuration: animDuration, animations: {
             if removeBlur {
                 blur?.alpha = 0
