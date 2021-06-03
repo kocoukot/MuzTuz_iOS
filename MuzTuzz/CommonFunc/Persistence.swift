@@ -21,7 +21,6 @@ class Persistence{
     private let freeCoinsInt = "Persistence.freeCoinsInt"
 
     
-    
     var totalCoins: Int?{
         set { UserDefaults.standard.set(newValue, forKey: userCoins) }
         get { return UserDefaults.standard.integer(forKey: userCoins) }
@@ -85,28 +84,29 @@ class RealmPremiasList: Object{
     var premias = List<RealmLevelList>()
 }
 
-//SaveLoadRealm().savePremiaInfo
+
 
 class SaveLoadRealm{
+    static let shared = SaveLoadRealm()
     private let realm = try! Realm()
     
     func saveRealmData(){
         let premiasList = RealmPremiasList()
-        for p in 0..<LevelsInfo().AlbomsList.count{
+        for p in 0..<LevelsInfo.AlbomsList.count{
             let premia = RealmLevelList()
-            for l in 0..<LevelsInfo().AlbomsList[p].count{
+            for l in 0..<LevelsInfo.AlbomsList[p].count{
                 let level = RealmLevelInfo()
-                level.levelName = LevelsInfo().premiaImagesList[p][l]
-                level.levelSolved = LevelsInfo().levelSolvedList[p][l]
-                level.firstHelp = LevelsInfo().helpsUsed[p][l][0]
-                level.secondHelp = LevelsInfo().helpsUsed[p][l][1]
-                level.thirdHelp = LevelsInfo().helpsUsed[p][l][2]
-                level.fourthHelp = LevelsInfo().helpsUsed[p][l][3] ?? false
+                level.levelName = LevelsInfo.premiaImagesList[p][l]
+                level.levelSolved = LevelsInfo.levelSolvedList[p][l]
+                level.firstHelp = LevelsInfo.helpsUsed[p][l][0]
+                level.secondHelp = LevelsInfo.helpsUsed[p][l][1]
+                level.thirdHelp = LevelsInfo.helpsUsed[p][l][2]
+                level.fourthHelp = LevelsInfo.helpsUsed[p][l][3] ?? false
 
                 level.timeSpendToSolve = 0.0
                 premia.premiaLevels.append(level)
             }
-            premia.premiaIsOpened = LevelsInfo().premiaIsOpendList[p]
+            premia.premiaIsOpened = LevelsInfo.premiaIsOpendList[p]
             premiasList.premias.append(premia)
         }
         Persistence.shared.totalSaved = true
@@ -116,14 +116,6 @@ class SaveLoadRealm{
     }
     
     func deleteRealm(){
-        
-        //        if realm.objects(RealmPremiasList.self) != nil{
-        //               let data = realm.objects(RealmPremiasList.self)
-        //        try! realm.beginWrite()
-        //            realm.delete(data)
-        //          try! realm.commitWrite()
-        //        }
-        
         try! realm.write{
             realm.deleteAll()
         }
@@ -209,13 +201,12 @@ class SaveLoadRealm{
         var maxTime = 0.0
         var maxTP = 0
         var maxTL = 0
-        var levelsSolved = 0
         var helpsUsed = 0
         if realm.objects(RealmLevelList.self) != nil{
             let data = realm.objects(RealmLevelList.self)
 
-            for p in 1..<LevelsInfo().AlbomsList.count{
-                for l in 0..<LevelsInfo().AlbomsList[p].count{
+            for p in 1..<LevelsInfo.AlbomsList.count{
+                for l in 0..<LevelsInfo.AlbomsList[p].count{
                     if !data.isEmpty, let timespend = data[p].premiaLevels[l].timeSpendToSolve as? Double  {
                         sumTime += timespend
                         if timespend < minTime && timespend != 0{
@@ -244,22 +235,20 @@ class SaveLoadRealm{
                     } else {
                         break
                     }
-                }}
-            return [sumTime, minTime, maxTime, Double(minTP),Double(minTL),Double(maxTP),Double(maxTL), Double(helpsUsed)]
-
+                }
+            }
             
         }
-        else {
-            return [0, 0, 0, 0, 0, 0, 0, 0]
-        }
+
+        return [sumTime, minTime, maxTime, Double(minTP),Double(minTL),Double(maxTP),Double(maxTL), Double(helpsUsed)]
     }
     
     func getSolvedLevelAmount() -> Int{
         var amount = 0
         if realm.objects(RealmLevelList.self) != nil{
             let data = realm.objects(RealmLevelList.self)
-            for p in 1..<LevelsInfo().AlbomsList.count{
-                for l in 0..<LevelsInfo().AlbomsList[p].count{
+            for p in 1..<LevelsInfo.AlbomsList.count{
+                for l in 0..<LevelsInfo.AlbomsList[p].count{
                     if !data.isEmpty && data[p].premiaLevels[l].levelSolved{
                        amount += 1
                     }
@@ -270,5 +259,3 @@ class SaveLoadRealm{
         return amount
     }
 }
-
-//SaveLoadRealm().getLevelInfo

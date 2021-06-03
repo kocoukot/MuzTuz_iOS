@@ -44,8 +44,7 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
     
     var selectedLetter = -1
     let animDuration = 0.3
-    var levelSolved = false
-     var helpListBool = [false, false, false,false]
+    var helpListBool = [false, false, false,false]
     var exitMessage = false
     var helpNum = 0
     var messageNum = 0
@@ -63,13 +62,10 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
                         "Если возникли трудности с отгадываем персонажа или группы, можете воспользоваться последней подсказкой и открыть весь уровень. Правда в дальнейшем стоить это будет немало!",
                         "Поздравляем с окончанием обучения! Можете приступать к основным уровням!"]
     
-    private let helpsName = ["Количество букв", "Показать выбранную букву", "Показать название песни и альбома","Показать ответ"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         answerButton.layer.cornerRadius = 5
-        CommonFuncs().shadowSet(answerButton)
-        levelSolved =  SaveLoadRealm().getPremiaLevelsInfo(levelInfo!.premiaID)[levelInfo!.lvlID]
+        answerButton.shadowSet()
 
         topBarVC.delegate = self
         messageView.delegate = self
@@ -88,7 +84,7 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
         
         var i = 0
         var r = 0
-        _  = Timer.scheduledTimer(withTimeInterval: 0.15, repeats: true) { (t) in
+        Timer.scheduledTimer(withTimeInterval: 0.15, repeats: true) { (t) in
             self.firstArrowImage.image = UIImage(named: self.arrowList[i])
             self.rightArrowImage.image = UIImage(named: self.arrowListRight[r])
             if i + 1 > self.arrowList.count-1 {
@@ -104,8 +100,8 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        SaveLoadRealm().saveLvlInfo(levelInfo!.premiaID, levelInfo!.lvlID, levelInfo!.levelImage, levelSolved, helpListBool, selectedLetter)
-        delegate?.tutorialEndUpdate(levelSolved)
+        SaveLoadRealm.shared.saveLvlInfo(levelInfo!.premiaID, levelInfo!.lvlID, levelInfo!.levelImage, levelInfo!.isSolved, helpListBool, selectedLetter)
+        delegate?.tutorialEndUpdate(levelInfo!.isSolved)
     }
     
     
@@ -116,7 +112,7 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
             if (answer!.contains(levelInfo!.correctAnswers[i])){
                
                 SoundsPlay.shared.playSound("win", "wav")
-                levelSolved = true
+                levelInfo?.isSolved = true
                 answerTextField.isEnabled = false
                 animateViewMoving(up: false)
                 messageView.showMessage(nil, messagesList[messageNum], view, okButton: true, messageView)
@@ -124,7 +120,7 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
 
             }
         }
-        if !levelSolved{
+        if !(levelInfo?.isSolved ?? false){
             SoundsPlay.shared.playSound("wrongAnswer", "wav")
             SoundsPlay.shared.vibrateNotify()
 
@@ -159,7 +155,7 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
         for i in 0..<amount{
             let button = UIButton()
             button.frame = CGRect(x:xPos / 2 - CGFloat(amount)/2*buttonWidth + CGFloat(i)*buttonWidth, y: lettersView.frame.height / 2 - lettersView.frame.height / 4, width: buttonWidth, height: lettersView.bounds.height-10)
-            CommonFuncs().shadowSet(button)
+            button.shadowSet()
             let index = correctAnswer.index(correctAnswer.startIndex, offsetBy: i)
             if correctAnswer[index] != " "{
                 button.isUserInteractionEnabled = true
@@ -208,7 +204,7 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
         helpNum = num
         firstArrowImage.isHidden = true
         SoundsPlay.shared.playSound("appearingView", "wav")
-        MessageView().showMessage(nil, "Вы уверены, что хотите использовать подсказку \"\(helpsName[num])?", view, okButton: false, messageView)
+        MessageView().showMessage(nil, "Вы уверены, что хотите использовать подсказку \"\(HelpTexts.allCases[num].rawValue)?", view, okButton: false, messageView)
         messageView.noButton.isEnabled = false
     }
     

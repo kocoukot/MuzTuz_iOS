@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +18,7 @@
                     <rect key="frame" x="20" y="10" width="210" height="103"/>
                     <string key="text">«Шанс - он не получка, не аванс», - как поется в одной известной пиратской песне. Но вот штрафа или выговора еще можно избежать, и вы обращаетесь к залу с просьбой назвать любимую песню у этого исполнителя. \nСмело берите подсказку «Название песни и альбома»!</string>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" systemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zO2-hf-7zP">
@@ -72,6 +73,7 @@
                     </connections>
                 </button>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="0.95989221329999996" green="0.91141486169999997" blue="0.80782818789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="W5G-VA-yBY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="3I3-i3-BwU"/>
@@ -87,7 +89,6 @@
                 <constraint firstItem="w6w-ls-0L2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wId-vZ-GQH"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="buttonsStackView" destination="zO2-hf-7zP" id="feB-kP-Bsb"/>
                 <outlet property="messageLabel" destination="W5G-VA-yBY" id="ic6-bI-Uhi"/>
@@ -105,5 +106,8 @@
         <image name="ok_tap" width="228" height="122"/>
         <image name="yes" width="228" height="122"/>
         <image name="yes_tap" width="228" height="122"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

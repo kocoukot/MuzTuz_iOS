@@ -40,7 +40,7 @@ class FinishLvlView: UIView {
         
         super.layoutSubviews()
         self.layer.cornerRadius = 10
-        CommonFuncs().shadowSet(okButton)
+        okButton.shadowSet()
         let animDuration = 0.25
         self.frame = CGRect(x: UIScreen.main.bounds.width / 2 - frameWidth/2  , y: UIScreen.main.bounds.height / 2 - frameHeight / 2, width: frameWidth , height: frameHeight )
         self.layoutIfNeeded()

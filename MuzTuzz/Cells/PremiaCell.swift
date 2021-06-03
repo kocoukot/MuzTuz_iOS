@@ -36,26 +36,26 @@ class PremiaCell: UITableViewCell, MessageViewDelegate {
         self.blur = blur
         if index > 1 && index < 7{
             if openLvl(index){
-                if !SaveLoadRealm().getPremiaInfo(index){
+                if !SaveLoadRealm.shared.getPremiaInfo(index){
                     SoundsPlay.shared.playSound("OpenPremia", "wav")
                     MessageView().showMessage(blur, "Поздравляем с открытием новой премии!", view,okButton: true, messageView )
-                    SaveLoadRealm().savePremiaInfo(index)
+                    SaveLoadRealm.shared.savePremiaInfo(index)
                 }
                 
-                premiaButtonOutlet.setImage(UIImage(named: LevelsInfo().premiaDisksList[index][SaveLoadRealm().getPremiaLevelsInfo(index).filter{solved in solved == true}.count]), for: .normal)
+                premiaButtonOutlet.setImage(UIImage(named: LevelsInfo.premiaDisksList[index][SaveLoadRealm.shared.getPremiaLevelsInfo(index).filter{solved in solved == true}.count]), for: .normal)
                 premiaButtonOutlet.isUserInteractionEnabled = true
             } else {
-                premiaButtonOutlet.setImage(UIImage(named: LevelsInfo().premiaDisksListClosed[index]), for: .normal)
+                premiaButtonOutlet.setImage(UIImage(named: LevelsInfo.premiaDisksListClosed[index]), for: .normal)
                 premiaButtonOutlet.isUserInteractionEnabled = false
             }
         } else {
-            premiaButtonOutlet.setImage(UIImage(named: LevelsInfo().premiaDisksList[index][SaveLoadRealm().getPremiaLevelsInfo(index).filter{solved in solved == true}.count]), for: .normal)
+            premiaButtonOutlet.setImage(UIImage(named: LevelsInfo.premiaDisksList[index][SaveLoadRealm.shared.getPremiaLevelsInfo(index).filter{solved in solved == true}.count]), for: .normal)
             premiaButtonOutlet.isUserInteractionEnabled = true
         }
     }
     
     private func openLvl(_ index: Int) -> Bool{
-        if Double(SaveLoadRealm().getPremiaLevelsInfo(index-1).filter{solved in solved == true}.count) / Double(SaveLoadRealm().getPremiaLevelsInfo(index-1).count)*100 >= percentage{
+        if Double(SaveLoadRealm.shared.getPremiaLevelsInfo(index-1).filter{solved in solved == true}.count) / Double(SaveLoadRealm.shared.getPremiaLevelsInfo(index-1).count)*100 >= percentage{
             return true
         } else {
             return false

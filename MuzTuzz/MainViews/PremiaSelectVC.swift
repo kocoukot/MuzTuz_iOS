@@ -13,7 +13,7 @@ class PremiaSelectVC: UIViewController, PremiaChooseDelegate {
     @IBOutlet weak var topBarView: UIView!
     @IBOutlet weak var blurEfect: UIVisualEffectView!
     
-    let premiaList = ["obychenie_0", "lvl10", "lvl20", "3lvl0", "4lvl0", "5lvl0", "6lvl0", "7lvl0"]
+   
     var selectedLevel = 0
     
     let topBarVC = TopBar.loadFromNIB()
@@ -29,11 +29,11 @@ class PremiaSelectVC: UIViewController, PremiaChooseDelegate {
         FreeCoinsRewardClass.freeAdd.interstitialAdLoad()
         
         if !Persistence.shared.totalSaved{
-            SaveLoadRealm().saveRealmData()
+            SaveLoadRealm.shared.saveRealmData()
         }
         
         if !Persistence.shared.first{
-            messageView.showMessage(nil, "Похоже это твой первый визит в игру МузТус! Рекомендуем сперва пройти небольшое обучение, чтобы разобраться что к чему. К тому же, если пройдешь обучение, получишь небольшой приятный стартовый бонус.", view, okButton: true, messageView)
+            messageView.showMessage(nil,TextFields.adviceForFirstHelp.rawValue , view, okButton: true, messageView)
             Persistence.shared.first = true
         }
         
@@ -53,17 +53,17 @@ class PremiaSelectVC: UIViewController, PremiaChooseDelegate {
             vc.premiaID = selectedLevel
             vc.delegate = self
         } else if let vc = segue.destination as? TutorialViewController, segue.identifier == "tutorialCellID"{
-            if let level = Level(levelImage: LevelsInfo().premiaImagesList[selectedLevel][0], correctAnswers: LevelsInfo().correctAnswersList[selectedLevel][0], albom: LevelsInfo().AlbomsList[selectedLevel][0], lvlID: selectedLevel, premiaID: selectedLevel){
+            let level = Level(levelImage: LevelsInfo.premiaImagesList[selectedLevel][0], correctAnswers: LevelsInfo.correctAnswersList[selectedLevel][0], albom: LevelsInfo.AlbomsList[selectedLevel][0], lvlID: selectedLevel, premiaID: selectedLevel,isSolved: SaveLoadRealm.shared.getPremiaLevelsInfo(selectedLevel)[selectedLevel])
                 vc.delegate = self
                 vc.levelInfo = level
-            }
+            
         }
     }
 }
 
 extension PremiaSelectVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return premiaList.count
+        return LevelsInfo.premiaListFirst.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -76,7 +76,7 @@ extension PremiaSelectVC: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as! PremiaCell
         cell.delegate = self
         cell.premiaStatusSet(indexPath.row, blurEfect, view)
-        if indexPath.row == LevelsInfo().premiasAmount-1{
+        if indexPath.row == LevelsInfo.premiasAmount-1{
             cell.premiaButtonOutlet.isUserInteractionEnabled = false
         }
         return cell
@@ -96,7 +96,7 @@ extension PremiaSelectVC: PremiaVCDelegate, TutorialEndDelegate, MessageViewDele
     
     func tutorialEndUpdate(_ lvlSolved: Bool) {
         premiaTable.reloadData()
-        if SaveLoadRealm().getPremiaLevelsInfo(0)[0] && !Persistence.shared.gotCoinsForTutorial{
+        if SaveLoadRealm.shared.getPremiaLevelsInfo(0)[0] && !Persistence.shared.gotCoinsForTutorial{
             Persistence.shared.gotCoinsForTutorial = true
             LevelHelps().coinsChange(200, topBarVC.coinsAmountLabel)
         }

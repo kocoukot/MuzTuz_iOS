@@ -60,16 +60,9 @@ class LevelViewController: UIViewController, UITextFieldDelegate  {
     private let startTime = Date()
     private var interval = 0.0
     
-    private let helpsName = ["К сожалению для подсказки недостаточно монет!", "Количество букв", "Показать выбранную букву", "Показать название песни и альбома","Показать ответ"]
     let prisesAmount = FinishLvlView().prisesAmount
     let smallStarsAmountWon = FinishLvlView().smallStarsAmountWon
     
-    private let prices = LevelHelps().prices
-    private let lettersAmountPrice = LevelHelps().prices[1]
-    private let oneLetterPrice = LevelHelps().prices[2]
-    private let albomPrice = LevelHelps().prices[3]
-    private let answerHelp = LevelHelps().prices[4]
-
     var starsAmount = 3
     
     override func viewDidLoad() {
@@ -78,7 +71,7 @@ class LevelViewController: UIViewController, UITextFieldDelegate  {
         if Persistence.shared.freeCoinsGotInt >= 5{
             Persistence.shared.freeCoinsGotInt = 0
         }
-        levelSolved =  SaveLoadRealm().getPremiaLevelsInfo(levelInfo!.premiaID)[levelInfo!.lvlID]
+        levelSolved =  levelInfo?.isSolved ?? false
         starsViewList = [finishLevelView.firstStarImage, finishLevelView.secondStarImage, finishLevelView.thirdStarImage]
         FreeCoinsRewardClass.freeAdd.delegate = self
         answerButton.layer.cornerRadius = 5
@@ -86,14 +79,13 @@ class LevelViewController: UIViewController, UITextFieldDelegate  {
         messageView.delegate = self
         finishLevelView.delegate = self
         answerTextField.delegate = self
-        selectedLetter = SaveLoadRealm().getLevelLetterHelp(levelInfo!.premiaID, lvl: levelInfo!.lvlID)
-        helpListBool = SaveLoadRealm().getLevelHelpUse(levelInfo!.premiaID, lvl: levelInfo!.lvlID)
+        selectedLetter = SaveLoadRealm.shared.getLevelLetterHelp(levelInfo!.premiaID, lvl: levelInfo!.lvlID)
+        helpListBool = SaveLoadRealm.shared.getLevelHelpUse(levelInfo!.premiaID, lvl: levelInfo!.lvlID)
         
         view.layoutIfNeeded()
         topBarVC.backButtonOutlet.isHidden = true
         topBarVC.coinsStarsUpdate()
-
-        CommonFuncs().shadowSet(answerButton)
+        answerButton.shadowSet()
         topBarView.addSubview(topBarVC)
         setLevelInfo()
         if levelSolved{
@@ -109,7 +101,7 @@ class LevelViewController: UIViewController, UITextFieldDelegate  {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        SaveLoadRealm().saveLvlInfo(levelInfo!.premiaID, levelInfo!.lvlID, levelInfo!.levelImage, levelSolved, helpListBool, selectedLetter, timeSpend: interval)
+        SaveLoadRealm.shared.saveLvlInfo(levelInfo!.premiaID, levelInfo!.lvlID, levelInfo!.levelImage, levelSolved, helpListBool, selectedLetter, timeSpend: interval)
         delegate?.levelClosedUpdate()
         
     }
@@ -182,7 +174,7 @@ class LevelViewController: UIViewController, UITextFieldDelegate  {
     
     // ------ первая подсказка
     @IBAction func lettersAmountHelp(_ sender: Any) {
-        if LevelHelps().enoughCoinsForHelp(lettersAmountPrice){
+        if LevelHelps().enoughCoinsForHelp(HelpPrices.lettersAmountPrice.rawValue){
             showMessageView(1)
         } else {
             showMessageView(0,1)
@@ -191,7 +183,7 @@ class LevelViewController: UIViewController, UITextFieldDelegate  {
     
     // ------ вторая подсказка
     @IBAction func oneLetterHelp(_ sender: Any) {
-        if LevelHelps().enoughCoinsForHelp(oneLetterPrice){
+        if LevelHelps().enoughCoinsForHelp(HelpPrices.oneLetterPrice.rawValue){
             showMessageView(2)
         } else {
             showMessageView(0,2)
@@ -200,7 +192,7 @@ class LevelViewController: UIViewController, UITextFieldDelegate  {
     
     // ------- Третья подсказка
     @IBAction func albomHelp(_ sender: Any) {
-        if LevelHelps().enoughCoinsForHelp(albomPrice){
+        if LevelHelps().enoughCoinsForHelp(HelpPrices.songNamePrice.rawValue){
             showMessageView(3)
         } else {
             showMessageView(0,3)
@@ -209,7 +201,7 @@ class LevelViewController: UIViewController, UITextFieldDelegate  {
     
         // ------- Четвертая подсказка
     @IBAction func answerHelp(_ sender: Any) {
-        if LevelHelps().enoughCoinsForHelp(albomPrice){
+        if LevelHelps().enoughCoinsForHelp(HelpPrices.showAnswerPrice.rawValue){
             showMessageView(4)
         } else {
             showMessageView(0,4)
@@ -224,7 +216,7 @@ class LevelViewController: UIViewController, UITextFieldDelegate  {
         for i in 0..<amount{
             let button = UIButton()
             button.frame = CGRect(x:xPos / 2 - CGFloat(amount)/2*buttonWidth + CGFloat(i)*buttonWidth, y: lettersView.frame.height / 2 - lettersView.frame.height / 4, width: buttonWidth, height: lettersView.bounds.height-10)
-            CommonFuncs().shadowSet(button)
+            button.shadowSet()
             let index = correctAnswer.index(correctAnswer.startIndex, offsetBy: i)
             if correctAnswer[index] != " "{
                 button.isUserInteractionEnabled = true
@@ -260,7 +252,8 @@ class LevelViewController: UIViewController, UITextFieldDelegate  {
         LevelHelps().oneLetterHelp(lettersLabel: lettersLabel, oneLetterHelpButton: oneLetterHelpButton, correctAnswer: (levelInfo?.correctAnswers[0])!, id: button.tag)
         oneLetterHelpButton.isEnabled = false
         lettersAmountHelpButton.isEnabled = false
-        LevelHelps().coinsChange(prices[helpNum],topBarVC.coinsAmountLabel)
+        
+        LevelHelps().coinsChange(HelpPrices.allCases[helpNum].rawValue,topBarVC.coinsAmountLabel)
         SoundsPlay.shared.playSound("spendMoney", "wav")
         helpListBool[helpNum-1] = true
         helpListBool[0] = true
@@ -279,11 +272,12 @@ class LevelViewController: UIViewController, UITextFieldDelegate  {
     private func showMessageView(_ num: Int,_ helpPrice: Int = 0){
         helpNum = num
         if num > 0{
+            
             SoundsPlay.shared.playSound("appearingView", "wav")
-            MessageView().showMessage(blur, "Вы уверены, что хотите использовать подсказку \"\(helpsName[num])\"?\n(\(abs(prices[num])) монет)", view, okButton: false, messageView)
+            MessageView().showMessage(blur, "Вы уверены, что хотите использовать подсказку \"\(HelpTexts.allCases[num].rawValue)\"?\n(\(abs(HelpPrices.allCases[helpNum].rawValue)) монет)", view, okButton: false, messageView)
         } else {
             SoundsPlay.shared.playSound("WarningView", "wav")
-            MessageView().showMessage(blur, "\(helpsName[num])\n(Необходимо \(abs(prices[helpPrice])) монет)", view, okButton: true, messageView)
+            MessageView().showMessage(blur, "\(HelpTexts.allCases[num].rawValue)\n(Необходимо \(abs(HelpPrices.allCases[helpPrice].rawValue)) монет)", view, okButton: true, messageView)
         }
         
     }
@@ -362,7 +356,8 @@ extension LevelViewController: MessageViewDelegate{
                 SoundsPlay.shared.playSound("spendMoney", "wav")
                 helpListBool[helpNum-1] = true
                 messageView.removeMessageView(blur)
-                LevelHelps().coinsChange(prices[helpNum],topBarVC.coinsAmountLabel)
+                
+                LevelHelps().coinsChange(HelpPrices(rawValue: helpNum)!.rawValue,topBarVC.coinsAmountLabel)
                 LevelHelps().albomHelp(songHelpLabel: songHelpLabel, songHelpButton: songHelpButton)
             case 4:
                  SoundsPlay.shared.playSound("answerHelp", "wav")
@@ -372,7 +367,7 @@ extension LevelViewController: MessageViewDelegate{
                  lettersLabel.isHidden = false
                  songHelpLabel.isHidden = false
                  levelSolved = true
-                 LevelHelps().coinsChange(prices[helpNum],topBarVC.coinsAmountLabel)
+                 LevelHelps().coinsChange(HelpPrices(rawValue: helpNum)!.rawValue,topBarVC.coinsAmountLabel)
                  helpsNOTAllowed()
                 let endTime = Date()
                 interval = Double(endTime.timeIntervalSince(startTime))
@@ -380,12 +375,11 @@ extension LevelViewController: MessageViewDelegate{
                 SoundsPlay.shared.playSound("spendMoney", "wav")
                 helpListBool[helpNum-1] = true
                 messageView.removeMessageView(blur)
-                LevelHelps().coinsChange(prices[helpNum],topBarVC.coinsAmountLabel)
+                LevelHelps().coinsChange(HelpPrices(rawValue: helpNum)!.rawValue,topBarVC.coinsAmountLabel)
                 LevelHelps().lettersAmountHelp(lettersLabel: lettersLabel, lettersAmountHelpButton: lettersAmountHelpButton, correctAnswer: (levelInfo?.correctAnswers[0])!)
             }
         } else {
             messageView.removeMessageView(blur)
-            
         }
     }
     

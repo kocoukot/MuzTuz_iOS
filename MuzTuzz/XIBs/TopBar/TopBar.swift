@@ -30,10 +30,10 @@ class TopBar: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         iconsUpdate()
-        
-        CommonFuncs().shadowSet(melodyButtonOutlet)
-        CommonFuncs().shadowSet(zvukButtonOutlet)
-        CommonFuncs().shadowSet(backButtonOutlet)
+        melodyButtonOutlet.shadowSet()
+        zvukButtonOutlet.shadowSet()
+        backButtonOutlet.shadowSet()
+
         self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60)
     }
     

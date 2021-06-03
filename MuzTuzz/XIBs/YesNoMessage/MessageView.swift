@@ -34,9 +34,10 @@ class MessageView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        CommonFuncs().shadowSet(yesButton)
-        CommonFuncs().shadowSet(noButton)
-        CommonFuncs().shadowSet(okButton)
+        yesButton.shadowSet()
+        noButton.shadowSet()
+        okButton.shadowSet()
+        
         self.layer.cornerRadius = 15
         self.frame = CGRect(x: viewX  , y: viewY, width: viewWidth , height: viewHeight)
     }

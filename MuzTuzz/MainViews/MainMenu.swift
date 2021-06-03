@@ -29,7 +29,7 @@ class ViewController: UIViewController, MessageViewDelegate {
         
         let buttonsList = [playButton, statisticButton,resetButton,creatirsButton,shopButton  ]
         for b in buttonsList{
-            CommonFuncs().shadowSet(b!)
+            b!.shadowSet()
         }
         
 //        ProductsLib.productClass.loadShop()
@@ -45,7 +45,7 @@ class ViewController: UIViewController, MessageViewDelegate {
 
             messageView.viewX = UIScreen.main.bounds.width / 2 - (messageView.viewWidth)/2
             messageView.viewY = UIScreen.main.bounds.height / 4
-            MessageView().showMessage(blur, "Вся информация, представленная в приложении, за исключением информации, имеющей ссылку на конкретный источник, является художественным вымыслом и не имеет отношения к реальным лицам и событиям. Автор не несет ответственности за случайным совпадения с реальными лицами и событиями.", view,okButton: true, messageView )
+            MessageView().showMessage(blur,TextFields.firstLaunch.rawValue , view,okButton: true, messageView )
         }
         topBarView.addSubview(topBarVC)
         
@@ -54,7 +54,7 @@ class ViewController: UIViewController, MessageViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? PremiaSelectVC, segue.identifier == "premiaList"{
             vc.delegate = self
-        } else if let vc = segue.destination as? TestVC, segue.identifier == "shopSegueID"{
+        } else if let vc = segue.destination as? ShopViewController, segue.identifier == "shopSegueID"{
             vc.delegate = self
         }
     }
@@ -92,7 +92,7 @@ class ViewController: UIViewController, MessageViewDelegate {
     func qestionAnswered(_ useHelp: Bool) {
         if useHelp{
             Persistence.shared.totalSaved = false
-            SaveLoadRealm().deleteRealm()
+            SaveLoadRealm.shared.deleteRealm()
             Persistence.shared.totalStars = 0
             topBarVC.coinsStarsUpdate()
             SoundsPlay.shared.playSound("ResetAll", "wav")
@@ -104,22 +104,12 @@ class ViewController: UIViewController, MessageViewDelegate {
     
     @IBAction func vkButton(_ sender: Any) {
         SoundsPlay.shared.playSound("common", "wav")
-        CommonFuncs().openURL("https://vk.com/kocou_kot")
+        openURL("https://vk.com/kocou_kot")
     }
-    
-//    @IBAction func fbButton(_ sender: Any) {
-//        SoundsPlay.shared.playSound("common", "wav")
-//        CommonFuncs().openURL("https://www.facebook.com/shimpaks")
-//    }
-//    
-//    @IBAction func twitButton(_ sender: Any) {
-//        SoundsPlay.shared.playSound("common", "wav")
-//        CommonFuncs().openURL("https://twitter.com/gugel_hunds")
-//    }
     
     @IBAction func instaButton(_ sender: Any) {
         SoundsPlay.shared.playSound("common", "wav")
-        CommonFuncs().openURL("https://www.instagram.com/alexzhegulov/")
+        openURL("https://www.instagram.com/alexzhegulov/")
     }
 }
 

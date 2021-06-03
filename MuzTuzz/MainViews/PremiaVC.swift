@@ -52,10 +52,10 @@ class PremiaVC: UIViewController, LevelChooseDelegate   {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? LevelViewController, segue.identifier == "levelSegue"{
-            if let level = Level(levelImage: LevelsInfo().premiaImagesList[premiaID][selectedLevel], correctAnswers: LevelsInfo().correctAnswersList[premiaID][selectedLevel], albom:  LevelsInfo().AlbomsList[premiaID][selectedLevel], lvlID: selectedLevel,premiaID: premiaID){
+            let level = Level(levelImage: LevelsInfo.premiaImagesList[premiaID][selectedLevel], correctAnswers: LevelsInfo.correctAnswersList[premiaID][selectedLevel], albom:  LevelsInfo.AlbomsList[premiaID][selectedLevel], lvlID: selectedLevel,premiaID: premiaID, isSolved: SaveLoadRealm.shared.getPremiaLevelsInfo(premiaID)[selectedLevel])
                 vc.levelInfo = level
                 vc.delegate = self
-            }
+            
         }
     }
     
@@ -72,13 +72,13 @@ extension PremiaVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return LevelsInfo().premiaImagesList[premiaID].count
+        return LevelsInfo.premiaImagesList[premiaID].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LevelCard", for: indexPath) as! PremiaCollectionViewCell
-        cell.levelButton.setImage(UIImage(named: LevelsInfo().premiaImagesList[premiaID][indexPath.row]), for: .normal)
-        cell.solvedImage.isHidden = !SaveLoadRealm().getPremiaLevelsInfo(premiaID)[indexPath.row]
+        cell.levelButton.setImage(UIImage(named: LevelsInfo.premiaImagesList[premiaID][indexPath.row]), for: .normal)
+        cell.solvedImage.isHidden = !SaveLoadRealm.shared.getPremiaLevelsInfo(premiaID)[indexPath.row]
         cell.delegate = self
         return cell
     }

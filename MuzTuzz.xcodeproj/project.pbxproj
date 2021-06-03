@@ -15,7 +15,6 @@
 		3A130C1C24ADB5DB00EEB70A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A130C1B24ADB5DB00EEB70A /* ViewModel.swift */; };
 		3A130C1E24ADB5E100EEB70A /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A130C1D24ADB5E100EEB70A /* IAPManager.swift */; };
 		3A130C2024ADBA1600EEB70A /* IAP_ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A130C1F24ADBA1500EEB70A /* IAP_ProductIDs.plist */; };
-		3A130C2724ADBE5C00EEB70A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A130C2624ADBE5C00EEB70A /* TestViewController.swift */; };
 		3A2C79062498A3E700897843 /* LevelsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C79052498A3E700897843 /* LevelsInfo.swift */; };
 		3A2C791D249B6E9600897843 /* ResetAll.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A2C790B249B6E9600897843 /* ResetAll.wav */; };
 		3A2C791F249B6E9600897843 /* wrongAnswer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A2C790D249B6E9600897843 /* wrongAnswer.wav */; };
@@ -59,6 +58,11 @@
 		3A75E2502496B71900CDB10D /* LettersHelp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A75E24F2496B71900CDB10D /* LettersHelp.xib */; };
 		3A75E2522496B72A00CDB10D /* LettersHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A75E2512496B72A00CDB10D /* LettersHelpView.swift */; };
 		3A75E25524978D6F00CDB10D /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A75E25424978D6F00CDB10D /* backgroundMusic.mp3 */; };
+		3AA0DFDE2669346A0089298A /* LevelStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0DFDD2669346A0089298A /* LevelStruct.swift */; };
+		3AA0DFE0266936B00089298A /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0DFDF266936B00089298A /* ShopViewController.swift */; };
+		3AA0DFE226693C4D0089298A /* TextEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0DFE126693C4D0089298A /* TextEnums.swift */; };
+		3AA0DFE526693FE40089298A /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0DFE426693FE40089298A /* StatisticModel.swift */; };
+		3AA0DFE82669404E0089298A /* StatisticController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0DFE72669404E0089298A /* StatisticController.swift */; };
 		3AD4688224A8AA69006A82CF /* boughtCoins.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3AD4688124A8AA69006A82CF /* boughtCoins.wav */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +91,6 @@
 		3A130C1B24ADB5DB00EEB70A /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3A130C1D24ADB5E100EEB70A /* IAPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		3A130C1F24ADBA1500EEB70A /* IAP_ProductIDs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = IAP_ProductIDs.plist; sourceTree = "<group>"; };
-		3A130C2624ADBE5C00EEB70A /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		3A2C79052498A3E700897843 /* LevelsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsInfo.swift; sourceTree = "<group>"; };
 		3A2C790B249B6E9600897843 /* ResetAll.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ResetAll.wav; sourceTree = "<group>"; };
 		3A2C790D249B6E9600897843 /* wrongAnswer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrongAnswer.wav; sourceTree = "<group>"; };
@@ -136,6 +139,11 @@
 		3A75E24F2496B71900CDB10D /* LettersHelp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LettersHelp.xib; sourceTree = "<group>"; };
 		3A75E2512496B72A00CDB10D /* LettersHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersHelpView.swift; sourceTree = "<group>"; };
 		3A75E25424978D6F00CDB10D /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		3AA0DFDD2669346A0089298A /* LevelStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelStruct.swift; sourceTree = "<group>"; };
+		3AA0DFDF266936B00089298A /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		3AA0DFE126693C4D0089298A /* TextEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEnums.swift; sourceTree = "<group>"; };
+		3AA0DFE426693FE40089298A /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
+		3AA0DFE72669404E0089298A /* StatisticController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticController.swift; sourceTree = "<group>"; };
 		3AD4688124A8AA69006A82CF /* boughtCoins.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boughtCoins.wav; sourceTree = "<group>"; };
 		3AD4688624A8B0E0006A82CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3AD4688824A8B102006A82CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -218,8 +226,10 @@
 		3A7079B92494C01A00403419 /* MuzTuzz */ = {
 			isa = PBXGroup;
 			children = (
+				3AA0DFE62669403D0089298A /* Contoller */,
 				3A2C794524A482B200897843 /* MuzTuzz.entitlements */,
 				3A75E25324978D6100CDB10D /* Audio */,
+				3AA0DFE326693FBF0089298A /* Model */,
 				3A2C794A24A4C2AB00897843 /* Shop */,
 				3A75E2392495272C00CDB10D /* MainViews */,
 				3A75E238249516AB00CDB10D /* Cells */,
@@ -272,6 +282,8 @@
 				3A75E23C24965F0400CDB10D /* Persistence.swift */,
 				3A75E23E24967D3C00CDB10D /* Helps.swift */,
 				3A2C79052498A3E700897843 /* LevelsInfo.swift */,
+				3AA0DFDD2669346A0089298A /* LevelStruct.swift */,
+				3AA0DFE126693C4D0089298A /* TextEnums.swift */,
 			);
 			path = CommonFunc;
 			sourceTree = "<group>";
@@ -294,9 +306,9 @@
 				3A75E2342495157800CDB10D /* PremiaVC.swift */,
 				3A75E23A24952DF000CDB10D /* LevelViewController.swift */,
 				3A2C7937249DF1E000897843 /* TutorialViewController.swift */,
+				3AA0DFDF266936B00089298A /* ShopViewController.swift */,
 				3A2C793B24A219BA00897843 /* StatisticViewController.swift */,
 				3A2C793D24A4633300897843 /* AuthorsViewController.swift */,
-				3A130C2624ADBE5C00EEB70A /* TestViewController.swift */,
 			);
 			path = MainViews;
 			sourceTree = "<group>";
@@ -357,6 +369,22 @@
 				3A2C792F249B702A00897843 /* Audio.swift */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		3AA0DFE326693FBF0089298A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3AA0DFE426693FE40089298A /* StatisticModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3AA0DFE62669403D0089298A /* Contoller */ = {
+			isa = PBXGroup;
+			children = (
+				3AA0DFE72669404E0089298A /* StatisticController.swift */,
+			);
+			path = Contoller;
 			sourceTree = "<group>";
 		};
 		7182F77CA3BE23E5538C0842 /* Frameworks */ = {
@@ -569,14 +597,18 @@
 				3A2C79062498A3E700897843 /* LevelsInfo.swift in Sources */,
 				3A130C1C24ADB5DB00EEB70A /* ViewModel.swift in Sources */,
 				3A2C793C24A219BA00897843 /* StatisticViewController.swift in Sources */,
+				3AA0DFDE2669346A0089298A /* LevelStruct.swift in Sources */,
 				3A2C7932249D29EC00897843 /* StartScreenViewController.swift in Sources */,
-				3A130C2724ADBE5C00EEB70A /* TestViewController.swift in Sources */,
 				3A75E23B24952DF000CDB10D /* LevelViewController.swift in Sources */,
+				3AA0DFE526693FE40089298A /* StatisticModel.swift in Sources */,
 				3A7079F524950A0000403419 /* TopBar.swift in Sources */,
 				3A130C1824AB8A3B00EEB70A /* SettingsManageable.swift in Sources */,
+				3AA0DFE0266936B00089298A /* ShopViewController.swift in Sources */,
 				3A75E2522496B72A00CDB10D /* LettersHelpView.swift in Sources */,
 				3A7079BF2494C01A00403419 /* MainMenu.swift in Sources */,
 				3A2C7938249DF1E000897843 /* TutorialViewController.swift in Sources */,
+				3AA0DFE226693C4D0089298A /* TextEnums.swift in Sources */,
+				3AA0DFE82669404E0089298A /* StatisticController.swift in Sources */,
 				3A75E237249515B800CDB10D /* PremiaCollectionViewCell.swift in Sources */,
 				3A75E23F24967D3C00CDB10D /* Helps.swift in Sources */,
 				3A6F643024A5D09C0075D3B6 /* GMAds.swift in Sources */,
